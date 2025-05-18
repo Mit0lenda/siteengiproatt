@@ -1,85 +1,303 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ENGIPRO Elevadores - Soluções em manutenção, modernização e peças para elevadores." />
+  <meta name="description" content="ENGIPRO Elevadores – 15 anos oferecendo manutenção, modernização e soluções completas em transporte vertical." />
   <meta name="author" content="ENGIPRO Elevadores" />
   <title>ENGIPRO Elevadores</title>
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
+  <!-- ===================  ASSETS  =================== -->
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/assets/img/favicon.png" />
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
 
-  <!-- Custom CSS (se precisar) -->
-  <link rel="stylesheet" href="/assets/css/style.css" />
+  <!-- Bootstrap 5 (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body class="bg-white text-gray-800 font-sans">
+  <!-- =================================================
+       HEADER
+  ================================================== -->
+  <header class="border-bottom sticky-top bg-white shadow-sm">
+    <div class="container-fluid px-lg-5 py-2">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+        <!-- Logo -->
+        <a href="/" class="d-flex align-items-center text-decoration-none">
+          <img src="assets/img/logo.png" alt="ENGIPRO Elevadores" height="48" />
+        </a>
 
-  <!-- Header -->
-  <div id="header-placeholder"></div>
+        <!-- Top-info (destinos + contato) – escondido em telas < md -->
+        <div class="d-none d-md-flex align-items-center flex-wrap gap-4 text-secondary small fw-semibold">
+          <div class="d-flex align-items-center gap-1">
+            <i class="fa-solid fa-location-dot text-primary"></i>
+            <a class="text-reset text-decoration-none" href="https://maps.app.goo.gl/rAY23y7jj8yYVJD88">Porto Alegre / RS</a>
+          </div>
+          <div class="vr"></div>
+          <div class="d-flex align-items-center gap-1">
+            <i class="fa-solid fa-location-dot text-primary"></i>
+            <a class="text-reset text-decoration-none" href="https://maps.app.goo.gl/36GR2aknDE26kJJUA">Estrela / RS</a>
+          </div>
+          <div class="vr"></div>
+          <div class="d-flex align-items-center gap-1">
+            <i class="fa-solid fa-envelope text-primary"></i>
+            <a class="text-reset text-decoration-none" href="mailto:vendas@engipro.com.br">vendas@engipro.com.br</a>
+          </div>
+          <div class="vr"></div>
+          <div class="d-flex align-items-center gap-1">
+            <i class="fa-solid fa-phone text-primary"></i>
+            <a class="text-reset text-decoration-none" href="tel:+555137127233">(51) 3712-7233</a>
+          </div>
+        </div>
 
-  <!-- Hero / Banner -->
-  <section class="bg-[url('/assets/img/banner.jpg')] bg-cover bg-center h-[70vh] flex items-center justify-center text-white text-center">
-    <div class="bg-black/50 p-6 rounded-lg">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Excelência em Elevadores</h1>
-      <p class="text-lg md:text-xl">Manutenção, modernização e soluções sob medida para seu condomínio ou empresa.</p>
+        <!-- Burger → aparece em telas < lg -->
+        <button class="navbar-toggler border-0 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <!-- Nav -->
+      <nav class="navbar navbar-expand-lg navbar-light mt-2 mt-lg-0">
+        <div class="collapse navbar-collapse justify-content-lg-end" id="mainNav">
+          <ul class="navbar-nav gap-lg-3">
+            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">Quem Somos</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="servicosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Serviços</a>
+              <ul class="dropdown-menu" aria-labelledby="servicosDropdown">
+                <li><a class="dropdown-item" href="#">Manutenção de Elevadores</a></li>
+                <li><a class="dropdown-item" href="#">Modernização de Elevadores</a></li>
+                <li><a class="dropdown-item" href="#">Limpeza de Poço de Elevador</a></li>
+                <li><a class="dropdown-item" href="#">Fabricação de Elevadores de Carga</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="produtosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Produtos</a>
+              <ul class="dropdown-menu" aria-labelledby="produtosDropdown">
+                <li><a class="dropdown-item" href="#">Plataformas de Acessibilidade</a></li>
+                <li><a class="dropdown-item" href="#">Home Lift</a></li>
+                <li><a class="dropdown-item" href="#">Elevador Social</a></li>
+                <li><a class="dropdown-item" href="#">Elevador de Carga</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#clientes">Clientes</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =================================================
+       HERO  + 15 ANOS
+  ================================================== -->
+  <section class="bg-dark text-white text-center d-flex align-items-center position-relative" style="min-height:60vh;background:url('assets/img/banner.jpg') center/cover no-repeat;" id="hero">
+    <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-black opacity-50"></div>
+    <div class="container position-relative z-1 py-5">
+      <h1 id="heroTitle" class="display-4 fw-bold mb-3">Soluções em<br class="d-none d-md-block">Elevadores</h1>
+      <span class="badge bg-primary fs-6 mb-4 py-2 px-3">15 anos de mercado</span>
+      <div id="heroButtons" class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+        <a href="#servicos" class="btn btn-outline-light">Nossos serviços</a>
+        <a href="#contato" class="btn btn-primary">Solicite um orçamento</a>
+      </div>
     </div>
   </section>
 
-  <!-- Seção: Sobre -->
-  <section class="py-20 px-6 max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl font-bold text-blue-600 mb-6">Quem Somos</h2>
-    <p class="text-gray-700 leading-relaxed max-w-3xl mx-auto">
-      A ENGIPRO atua há mais de 10 anos oferecendo soluções em manutenção e modernização de elevadores. Com sede no RS e atuação em todo o estado, nossa missão é elevar a segurança e confiabilidade do seu transporte vertical.
-    </p>
+  <!-- =================================================
+       CLIENTES – destaque na home
+  ================================================== -->
+  <section class="py-5" id="clientes">
+    <div class="container">
+      <h2 class="text-center fs-4 fw-bold mb-4">Clientes ENGIPRO</h2>
+      <div class="d-flex flex-wrap justify-content-center gap-4">
+        <!-- Cada logo recebe class client-logo p/ animação -->
+        <img class="client-logo" src="assets/img/clients/alergs.png" alt="Assembleia Legislativa" height="48" />
+        <img class="client-logo" src="assets/img/clients/senac.png" alt="Senac" height="48" />
+        <img class="client-logo" src="assets/img/clients/sicred.png" alt="Sicredi" height="48" />
+        <img class="client-logo" src="assets/img/clients/pf.png" alt="Polícia Federal" height="48" />
+        <img class="client-logo" src="assets/img/clients/tce.png" alt="Tribunal de Contas do Estado" height="48" />
+        <img class="client-logo" src="assets/img/clients/cnec.png" alt="Faculdade CNEC" height="48" />
+        <img class="client-logo" src="assets/img/clients/asbrev.png" alt="Asbrev" height="48" />
+        <img class="client-logo" src="assets/img/clients/criamigos.png" alt="Mundo Criamigos" height="48" />
+        <img class="client-logo" src="assets/img/clients/datywyler.png" alt="Datwyler" height="48" />
+      </div>
+    </div>
   </section>
 
-  <!-- Seção: Serviços -->
-  <section class="py-16 bg-gray-50 px-6">
-    <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-3xl font-bold text-blue-600 mb-10">Nossos Serviços</h2>
-      <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
-        <div class="p-6 bg-white shadow-md rounded-lg">
-          <i class="fas fa-tools text-blue-500 text-4xl mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Manutenção</h3>
-          <p class="text-gray-600 text-sm">Preventiva e corretiva para todas as marcas.</p>
+  <!-- =================================================
+       SERVIÇOS – cartões
+  ================================================== -->
+  <section id="servicos" class="py-5 bg-light">
+    <div class="container">
+      <div class="row g-4">
+        <!-- CARD 01 -->
+        <div class="col-6 col-md-3">
+          <div class="card h-100 shadow-sm service-card">
+            <img src="assets/img/service-manutencao.jpg" class="card-img-top" alt="Manutenção de Elevadores" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-2">Manutenção de Elevadores</h5>
+              <p class="card-text small flex-grow-1">Inspeção, reparos e testes para garantir funcionamento seguro.</p>
+              <a href="#" class="btn btn-outline-primary w-100">Ver serviço</a>
+            </div>
+          </div>
         </div>
-        <div class="p-6 bg-white shadow-md rounded-lg">
-          <i class="fas fa-sync-alt text-blue-500 text-4xl mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Modernização</h3>
-          <p class="text-gray-600 text-sm">Atualização de sistema, estética e segurança.</p>
+        <!-- CARD 02 -->
+        <div class="col-6 col-md-3">
+          <div class="card h-100 shadow-sm service-card">
+            <img src="assets/img/service-modernizacao.jpg" class="card-img-top" alt="Modernização de Elevadores" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-2">Modernização de Elevadores</h5>
+              <p class="card-text small flex-grow-1">Atualização de sistemas e componentes para maior eficiência.</p>
+              <a href="#" class="btn btn-outline-primary w-100">Ver serviço</a>
+            </div>
+          </div>
         </div>
-        <div class="p-6 bg-white shadow-md rounded-lg">
-          <i class="fas fa-cogs text-blue-500 text-4xl mb-4"></i>
-          <h3 class="text-xl font-semibold mb-2">Peças e Componentes</h3>
-          <p class="text-gray-600 text-sm">Catálogo multimarcas com envio para todo o Brasil.</p>
+        <!-- CARD 03 (imagem será trocada) -->
+        <div class="col-6 col-md-3">
+          <div class="card h-100 shadow-sm service-card">
+            <img src="assets/img/service-limpeza.jpg" class="card-img-top" alt="Limpeza de Poço" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-2">Limpeza de Poço de Elevador</h5>
+              <p class="card-text small flex-grow-1">Remoção de resíduos e água para prevenir danos e manter segurança.</p>
+              <a href="#" class="btn btn-outline-primary w-100">Ver serviço</a>
+            </div>
+          </div>
+        </div>
+        <!-- CARD 04 – atualizado para Elevadores de Carga -->
+        <div class="col-6 col-md-3">
+          <div class="card h-100 shadow-sm service-card">
+            <img src="assets/img/service-carga.jpg" class="card-img-top" alt="Elevadores de Carga" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title mb-2">Fabricação de Elevadores de Carga</h5>
+              <p class="card-text small flex-grow-1">Projetos robustos e sob medida para movimentação de cargas.</p>
+              <a href="#" class="btn btn-outline-primary w-100">Ver serviço</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Seção: CTA -->
-  <section class="py-20 bg-blue-600 text-white text-center">
-    <h2 class="text-3xl font-bold mb-4">Solicite um Orçamento</h2>
-    <p class="mb-6">Atendimento rápido via WhatsApp ou e-mail</p>
-    <a href="https://wa.me/555199999999" target="_blank" class="bg-white text-blue-600 font-bold py-3 px-6 rounded-full hover:bg-gray-200 transition">Falar com a ENGIPRO</a>
+  <!-- =================================================
+       CTA – atendimento 24h
+  ================================================== -->
+  <section class="py-5 bg-primary text-white text-center">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <div class="p-4 bg-primary rounded shadow"><i class="fa-solid fa-clock fa-2x mb-2"></i>
+            <h5>Atendimento 24 h</h5><p>Sábados, domingos e feriados.</p></div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="p-4 bg-primary rounded shadow"><i class="fa-solid fa-phone fa-2x mb-2"></i>
+            <h5>Ligue agora</h5><a href="tel:+555137127233" class="text-white h4 d-block">(51) 3712-7233</a></div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="p-4 bg-primary rounded shadow"><i class="fa-solid fa-building fa-2x mb-2"></i>
+            <h5>Sedes no Rio Grande do Sul</h5><p>Estrela (Matriz) &amp; Porto Alegre</p></div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Footer -->
-  <div id="footer-placeholder"></div>
+  <!-- =================================================
+       SOBRE NÓS
+  ================================================== -->
+  <section id="about" class="py-5 bg-white">
+    <div class="container">
+      <div class="row align-items-center gy-4">
+        <div class="col-lg-5 text-center text-lg-start">
+          <img src="assets/img/fabrica-frota.jpg" class="img-fluid rounded mb-3" alt="Fábrica ENGIPRO" />
+          <!-- segunda imagem opcional -->
+          <img src="assets/img/fabrica-engipro.jpg" class="img-fluid rounded d-none d-lg-block" alt="Produção" />
+        </div>
+        <div class="col-lg-7">
+          <h3 class="fw-bold mb-3">Um pouco sobre nós…</h3>
+          <p class="mb-3">Fundada em 30 de julho de 2014 na cidade de Estrela/RS, a ENGIPRO começou como fabricante de elevadores sociais, residenciais e plataformas de acessibilidade. Percebendo a carência de manutenção multimarcas de confiança, passamos a oferecer esse serviço em todo o Vale do Taquari e Região Metropolitana.</p>
+          <p>Em 2024, com o crescimento em Porto Alegre e a chegada a novos clientes afetados por catástrofes naturais, abrimos nossa primeira filial, reforçando o compromisso em entregar produtos seguros, estáveis e de baixa manutenção.</p>
+          <!-- Tabs Missão / Visão / Valores -->
+          <ul class="nav nav-pills mt-4" id="aboutTab" role="tablist">
+            <li class="nav-item" role="presentation"><button class="nav-link active" id="missao-tab" data-bs-toggle="tab" data-bs-target="#missao" type="button" role="tab" aria-controls="missao" aria-selected="true">Missão</button></li>
+            <li class="nav-item" role="presentation"><button class="nav-link" id="visao-tab" data-bs-toggle="tab" data-bs-target="#visao" type="button" role="tab" aria-controls="visao" aria-selected="false">Visão</button></li>
+            <li class="nav-item" role="presentation"><button class="nav-link" id="valores-tab" data-bs-toggle="tab" data-bs-target="#valores" type="button" role="tab" aria-controls="valores" aria-selected="false">Valores</button></li>
+          </ul>
+          <div class="tab-content mt-3" id="aboutTabContent">
+            <div class="tab-pane fade show active" id="missao" role="tabpanel" aria-labelledby="missao-tab"><p>Proporcionar acessibilidade por meio de produtos dentro das normas e oferecer soluções sob medida para movimentação de cargas.</p></div>
+            <div class="tab-pane fade" id="visao" role="tabpanel" aria-labelledby="visao-tab"><p>Ser referência em acessibilidade e inovação em transporte vertical.</p></div>
+            <div class="tab-pane fade" id="valores" role="tabpanel" aria-labelledby="valores-tab"><p>Responsabilidade social é o que nos move.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Carrega Header e Footer dinamicamente -->
-<script src="/assets/js/main.js"></script>
+  <!-- =================================================
+       FOOTER
+  ================================================== -->
+  <footer class="bg-dark text-white pt-5 pb-3">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-md-6">
+          <h3 class="fw-bold mb-3">Soluções em elevadores!</h3>
+          <a href="#contato" class="btn btn-primary">Fale Conosco</a>
+        </div>
+        <div class="col-md-6">
+          <h5 class="mb-2">Endereços</h5>
+          <p class="mb-2"><a class="text-reset text-decoration-none" href="https://maps.app.goo.gl/36GR2aknDE26kJJUA">Rua João Pedro Mallmann, 1795<br>Estrela – RS</a></p>
+          <p class="mb-2"><a class="text-reset text-decoration-none" href="https://maps.app.goo.gl/rAY23y7jj8yYVJD88">Rua Cel Neves, 394 – Medianeira<br>Porto Alegre – RS</a></p>
+          <div class="mt-2"><a href="https://www.instagram.com/engiproelevadores" target="_blank" class="text-white me-2"><i class="fab fa-instagram fa-lg"></i></a></div>
+        </div>
+      </div>
+    </div>
+    <!-- Botão WhatsApp flutuante -->
+    <a href="https://api.whatsapp.com/send?phone=5551998031542" class="whatsapp-button position-fixed bottom-0 end-0 m-4 bg-success text-white rounded-circle p-3 shadow" target="_blank" style="z-index:9999;">
+      <i class="fab fa-whatsapp fa-2x"></i>
+    </a>
+  </footer>
 
+  <!-- ===================  SCRIPTS  =================== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
 
+  <!-- Animations -->
+  <script>
+    // GSAP setup
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero animation
+    gsap.from("#heroTitle", { y: 50, opacity: 0, duration: 1 });
+    gsap.from("#heroButtons", { y: 30, opacity: 0, duration: 0.8, delay: 0.3 });
+
+    // Service cards – fade-up when in viewport
+    gsap.utils.toArray(".service-card").forEach(card => {
+      gsap.from(card, {
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: card,
+          start: "top 85%",
+        }
+      })
+    });
+
+    // Client logos – pop-in effect
+    gsap.from(".client-logo", {
+      scale: 0.5,
+      opacity: 0,
+      stagger: 0.1,
+      duration: 0.6,
+      scrollTrigger: {
+        trigger: "#clientes",
+        start: "top 90%",
+      }
+    });
+  </script>
 </body>
-
 </html>
