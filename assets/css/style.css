@@ -96,3 +96,120 @@ footer {
     display: block;
   }
 }
+
+/* ————————— Clientes – faixa deslizante corrigida ————————— */
+.client-scroller {
+  height: 80px;           /* altura fixa: 48px (logo) + ~16px de padding acima/baixo */
+  overflow: hidden;       /* esconde qualquer excesso em X ou Y */
+  position: relative;
+  margin-bottom: 2rem;    /* separa as fileiras */
+  display: flex;
+  align-items: center;    /* verticalmente centrado */
+}
+
+.client-track {
+  display: flex;
+  gap: 2rem;
+  /* A animação agora vai de 0 a -50% para o loop contínuo */
+  animation: scroll 40s linear infinite;
+}
+
+.client-track img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.client-track img:hover {
+  transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+/* Animação de rolagem */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* acessibilidade: reduz movimento para quem preferir */
+@media (prefers-reduced-motion: reduce) {
+  .client-scroller { overflow-x: auto; }
+}
+:root {
+  /* quantos pixels por segundo queremos que a faixa percorra */
+  --marquee-speed: 100; 
+}
+  /* Contêiner dos clientes e animação de rolagem */
+  .client-scrollers {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Espaço entre os dois contêineres */
+  }
+
+  .client-scroller {
+    overflow: hidden;
+    position: relative;
+    height: 80px; /* Altura fixa, centraliza os logos */
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .client-track {
+    display: flex;
+    gap: 2rem;
+    animation: scroll 40s linear infinite; /* 40s = movimento mais lento */
+  }
+
+  .client-track img {
+    height: 48px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+
+  .client-track img:hover {
+    transform: scale(1.1); /* Efeito de zoom */
+  }
+
+  /* Keyframes para rolagem contínua */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Acessibilidade: reduz movimento se preferir */
+  @media (prefers-reduced-motion: reduce) {
+    .client-track {
+      animation: none;
+    }
+  }
+
+/* Clientes - Grid */
+.client-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsivo */
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+}
+
+.client-grid img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.client-grid img:hover {
+  transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+

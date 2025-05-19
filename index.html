@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ENGIPRO Elevadores – 15 anos oferecendo manutenção, modernização e soluções completas em transporte vertical." />
+  <meta name="description"
+    content="ENGIPRO Elevadores – 15 anos oferecendo manutenção, modernização e soluções completas em transporte vertical." />
   <meta name="author" content="ENGIPRO Elevadores" />
   <title>ENGIPRO Elevadores</title>
 
   <!-- ===================  ASSETS  =================== -->
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="icon" type="image/png" href="assets/img/icones/fav.png" />
 
   <!-- Bootstrap 5 (CDN) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
@@ -28,14 +30,15 @@
       <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
         <!-- Logo -->
         <a href="/" class="d-flex align-items-center text-decoration-none">
-          <img src="assets/img/logo.png" alt="ENGIPRO Elevadores" height="48" />
+          <img src="assets/img/logo/logo.png" alt="ENGIPRO Elevadores" height="48" />
         </a>
 
         <!-- Top-info (destinos + contato) – escondido em telas < md -->
         <div class="d-none d-md-flex align-items-center flex-wrap gap-4 text-secondary small fw-semibold">
           <div class="d-flex align-items-center gap-1">
             <i class="fa-solid fa-location-dot text-primary"></i>
-            <a class="text-reset text-decoration-none" href="https://maps.app.goo.gl/rAY23y7jj8yYVJD88">Porto Alegre / RS</a>
+            <a class="text-reset text-decoration-none" href="https://maps.app.goo.gl/rAY23y7jj8yYVJD88">Porto Alegre /
+              RS</a>
           </div>
           <div class="vr"></div>
           <div class="d-flex align-items-center gap-1">
@@ -55,7 +58,8 @@
         </div>
 
         <!-- Burger → aparece em telas < lg -->
-        <button class="navbar-toggler border-0 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Menu">
+        <button class="navbar-toggler border-0 d-lg-none" type="button" data-bs-toggle="collapse"
+          data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Menu">
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
@@ -67,7 +71,8 @@
             <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="#about">Quem Somos</a></li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="servicosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Serviços</a>
+              <a class="nav-link dropdown-toggle" href="#" id="servicosDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Serviços</a>
               <ul class="dropdown-menu" aria-labelledby="servicosDropdown">
                 <li><a class="dropdown-item" href="#">Manutenção de Elevadores</a></li>
                 <li><a class="dropdown-item" href="#">Modernização de Elevadores</a></li>
@@ -76,7 +81,8 @@
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="produtosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Produtos</a>
+              <a class="nav-link dropdown-toggle" href="#" id="produtosDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Produtos</a>
               <ul class="dropdown-menu" aria-labelledby="produtosDropdown">
                 <li><a class="dropdown-item" href="#">Plataformas de Acessibilidade</a></li>
                 <li><a class="dropdown-item" href="#">Home Lift</a></li>
@@ -95,7 +101,8 @@
   <!-- =================================================
        HERO  + 15 ANOS
   ================================================== -->
-  <section class="bg-dark text-white text-center d-flex align-items-center position-relative" style="min-height:60vh;background:url('assets/img/banner.jpg') center/cover no-repeat;" id="hero">
+  <section class="bg-dark text-white text-center d-flex align-items-center position-relative"
+    style="min-height:60vh;background:url('assets/img/banners/banner.jpeg') center/cover no-repeat;" id="hero">
     <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-black opacity-50"></div>
     <div class="container position-relative z-1 py-5">
       <h1 id="heroTitle" class="display-4 fw-bold mb-3">Soluções em<br class="d-none d-md-block">Elevadores</h1>
@@ -107,27 +114,47 @@
     </div>
   </section>
 
-  <!-- =================================================
-       CLIENTES – destaque na home
-  ================================================== -->
-  <section class="py-5" id="clientes">
+  <section id="clientes" class="py-5 bg-white">
     <div class="container">
-      <h2 class="text-center fs-4 fw-bold mb-4">Clientes ENGIPRO</h2>
-      <div class="d-flex flex-wrap justify-content-center gap-4">
-        <!-- Cada logo recebe class client-logo p/ animação -->
-        <img class="client-logo" src="assets/img/clients/alergs.png" alt="Assembleia Legislativa" height="48" />
-        <img class="client-logo" src="assets/img/clients/senac.png" alt="Senac" height="48" />
-        <img class="client-logo" src="assets/img/clients/sicred.png" alt="Sicredi" height="48" />
-        <img class="client-logo" src="assets/img/clients/pf.png" alt="Polícia Federal" height="48" />
-        <img class="client-logo" src="assets/img/clients/tce.png" alt="Tribunal de Contas do Estado" height="48" />
-        <img class="client-logo" src="assets/img/clients/cnec.png" alt="Faculdade CNEC" height="48" />
-        <img class="client-logo" src="assets/img/clients/asbrev.png" alt="Asbrev" height="48" />
-        <img class="client-logo" src="assets/img/clients/criamigos.png" alt="Mundo Criamigos" height="48" />
-        <img class="client-logo" src="assets/img/clients/datywyler.png" alt="Datwyler" height="48" />
+      <h2 class="text-center fs-4 fw-bold mb-4">Nossos Clientes</h2>
+      <div class="client-scrollers">
+        <!-- Primeiro contêiner com metade das marcas -->
+        <div class="client-scroller">
+          <div class="client-track">
+            <img src="assets/img/clientes/assembleia-legislativa.png" alt="Assembleia Legislativa">
+            <img src="assets/img/clientes/senac.png" alt="Senac">
+            <img src="assets/img/clientes/sicred.png" alt="Sicred">
+            <img src="assets/img/clientes/policia-federal.png" alt="Polícia Federal">
+            <img src="assets/img/clientes/tribunal-contas-estado.png" alt="Tribunal de Contas do Estado">
+            <img src="assets/img/clientes/tribunal-justica-militar.png" alt="Tribunal de Justiça Militar">
+            <img src="assets/img/clientes/conselho-biomedicina.png" alt="Conselho de Biomedicina">
+            <img src="assets/img/clientes/faculdade-cnec.png" alt="Faculdade CNEC">
+            <img src="assets/img/clientes/ufrgs.png" alt="UFRGS">
+            <img src="assets/img/clientes/asbrev.png" alt="Asbrev">
+            <img src="assets/img/clientes/mundo-criamigos.png" alt="Mundo Criamigos">
+            <img src="assets/img/clientes/datywyler.png" alt="Datwyler">
+          </div>
+        </div>
+        <!-- Segundo contêiner com a outra metade -->
+        <div class="client-scroller">
+          <div class="client-track">
+            <img src="assets/img/clientes/cra.png" alt="CRA">
+            <img src="assets/img/clientes/crcrs.png" alt="CRCRS">
+            <img src="assets/img/clientes/mpsc.png" alt="MPSC">
+            <img src="assets/img/clientes/unipampa.png" alt="Unipampa">
+            <img src="assets/img/clientes/marinha-brasil.png" alt="Marinha do Brasil">
+            <img src="assets/img/clientes/justica-militar.png" alt="Justiça Militar">
+            <img src="assets/img/clientes/prefeitura-gravatai.png" alt="Prefeitura de Gravataí">
+            <img src="assets/img/clientes/prefeitura-canoas.png" alt="Prefeitura de Canoas">
+            <img src="assets/img/clientes/prefeitura-novo-hamburgo.png" alt="Prefeitura de Novo Hamburgo">
+            <img src="assets/img/clientes/prefeitura-dois-irmaos.png" alt="Prefeitura de Dois Irmãos">
+            <img src="assets/img/clientes/seara.png" alt="Seara">
+            <img src="assets/img/clientes/ceasa.png" alt="Ceasa">
+          </div>
+        </div>
       </div>
     </div>
   </section>
-
   <!-- =================================================
        SERVIÇOS – cartões
   ================================================== -->
@@ -162,7 +189,8 @@
             <img src="assets/img/service-limpeza.jpg" class="card-img-top" alt="Limpeza de Poço" />
             <div class="card-body d-flex flex-column">
               <h5 class="card-title mb-2">Limpeza de Poço de Elevador</h5>
-              <p class="card-text small flex-grow-1">Remoção de resíduos e água para prevenir danos e manter segurança.</p>
+              <p class="card-text small flex-grow-1">Remoção de resíduos e água para prevenir danos e manter segurança.
+              </p>
               <a href="#" class="btn btn-outline-primary w-100">Ver serviço</a>
             </div>
           </div>
@@ -190,15 +218,20 @@
       <div class="row g-4">
         <div class="col-12 col-md-4">
           <div class="p-4 bg-primary rounded shadow"><i class="fa-solid fa-clock fa-2x mb-2"></i>
-            <h5>Atendimento 24 h</h5><p>Sábados, domingos e feriados.</p></div>
+            <h5>Atendimento 24 h</h5>
+            <p>Sábados, domingos e feriados.</p>
+          </div>
         </div>
         <div class="col-12 col-md-4">
           <div class="p-4 bg-primary rounded shadow"><i class="fa-solid fa-phone fa-2x mb-2"></i>
-            <h5>Ligue agora</h5><a href="tel:+555137127233" class="text-white h4 d-block">(51) 3712-7233</a></div>
+            <h5>Ligue agora</h5><a href="tel:+555137127233" class="text-white h4 d-block">(51) 3712-7233</a>
+          </div>
         </div>
         <div class="col-12 col-md-4">
           <div class="p-4 bg-primary rounded shadow"><i class="fa-solid fa-building fa-2x mb-2"></i>
-            <h5>Sedes no Rio Grande do Sul</h5><p>Estrela (Matriz) &amp; Porto Alegre</p></div>
+            <h5>Sedes no Rio Grande do Sul</h5>
+            <p>Estrela (Matriz) &amp; Porto Alegre</p>
+          </div>
         </div>
       </div>
     </div>
@@ -217,18 +250,36 @@
         </div>
         <div class="col-lg-7">
           <h3 class="fw-bold mb-3">Um pouco sobre nós…</h3>
-          <p class="mb-3">Fundada em 30 de julho de 2014 na cidade de Estrela/RS, a ENGIPRO começou como fabricante de elevadores sociais, residenciais e plataformas de acessibilidade. Percebendo a carência de manutenção multimarcas de confiança, passamos a oferecer esse serviço em todo o Vale do Taquari e Região Metropolitana.</p>
-          <p>Em 2024, com o crescimento em Porto Alegre e a chegada a novos clientes afetados por catástrofes naturais, abrimos nossa primeira filial, reforçando o compromisso em entregar produtos seguros, estáveis e de baixa manutenção.</p>
+          <p class="mb-3">Fundada em 30 de julho de 2014 na cidade de Estrela/RS, a ENGIPRO começou como fabricante de
+            elevadores sociais, residenciais e plataformas de acessibilidade. Percebendo a carência de manutenção
+            multimarcas de confiança, passamos a oferecer esse serviço em todo o Vale do Taquari e Região Metropolitana.
+          </p>
+          <p>Em 2024, com o crescimento em Porto Alegre e a chegada a novos clientes afetados por catástrofes naturais,
+            abrimos nossa primeira filial, reforçando o compromisso em entregar produtos seguros, estáveis e de baixa
+            manutenção.</p>
           <!-- Tabs Missão / Visão / Valores -->
           <ul class="nav nav-pills mt-4" id="aboutTab" role="tablist">
-            <li class="nav-item" role="presentation"><button class="nav-link active" id="missao-tab" data-bs-toggle="tab" data-bs-target="#missao" type="button" role="tab" aria-controls="missao" aria-selected="true">Missão</button></li>
-            <li class="nav-item" role="presentation"><button class="nav-link" id="visao-tab" data-bs-toggle="tab" data-bs-target="#visao" type="button" role="tab" aria-controls="visao" aria-selected="false">Visão</button></li>
-            <li class="nav-item" role="presentation"><button class="nav-link" id="valores-tab" data-bs-toggle="tab" data-bs-target="#valores" type="button" role="tab" aria-controls="valores" aria-selected="false">Valores</button></li>
+            <li class="nav-item" role="presentation"><button class="nav-link active" id="missao-tab"
+                data-bs-toggle="tab" data-bs-target="#missao" type="button" role="tab" aria-controls="missao"
+                aria-selected="true">Missão</button></li>
+            <li class="nav-item" role="presentation"><button class="nav-link" id="visao-tab" data-bs-toggle="tab"
+                data-bs-target="#visao" type="button" role="tab" aria-controls="visao"
+                aria-selected="false">Visão</button></li>
+            <li class="nav-item" role="presentation"><button class="nav-link" id="valores-tab" data-bs-toggle="tab"
+                data-bs-target="#valores" type="button" role="tab" aria-controls="valores"
+                aria-selected="false">Valores</button></li>
           </ul>
           <div class="tab-content mt-3" id="aboutTabContent">
-            <div class="tab-pane fade show active" id="missao" role="tabpanel" aria-labelledby="missao-tab"><p>Proporcionar acessibilidade por meio de produtos dentro das normas e oferecer soluções sob medida para movimentação de cargas.</p></div>
-            <div class="tab-pane fade" id="visao" role="tabpanel" aria-labelledby="visao-tab"><p>Ser referência em acessibilidade e inovação em transporte vertical.</p></div>
-            <div class="tab-pane fade" id="valores" role="tabpanel" aria-labelledby="valores-tab"><p>Responsabilidade social é o que nos move.</p></div>
+            <div class="tab-pane fade show active" id="missao" role="tabpanel" aria-labelledby="missao-tab">
+              <p>Proporcionar acessibilidade por meio de produtos dentro das normas e oferecer soluções sob medida para
+                movimentação de cargas.</p>
+            </div>
+            <div class="tab-pane fade" id="visao" role="tabpanel" aria-labelledby="visao-tab">
+              <p>Ser referência em acessibilidade e inovação em transporte vertical.</p>
+            </div>
+            <div class="tab-pane fade" id="valores" role="tabpanel" aria-labelledby="valores-tab">
+              <p>Responsabilidade social é o que nos move.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -247,14 +298,20 @@
         </div>
         <div class="col-md-6">
           <h5 class="mb-2">Endereços</h5>
-          <p class="mb-2"><a class="text-reset text-decoration-none" href="https://maps.app.goo.gl/36GR2aknDE26kJJUA">Rua João Pedro Mallmann, 1795<br>Estrela – RS</a></p>
-          <p class="mb-2"><a class="text-reset text-decoration-none" href="https://maps.app.goo.gl/rAY23y7jj8yYVJD88">Rua Cel Neves, 394 – Medianeira<br>Porto Alegre – RS</a></p>
-          <div class="mt-2"><a href="https://www.instagram.com/engiproelevadores" target="_blank" class="text-white me-2"><i class="fab fa-instagram fa-lg"></i></a></div>
+          <p class="mb-2"><a class="text-reset text-decoration-none"
+              href="https://maps.app.goo.gl/36GR2aknDE26kJJUA">Rua João Pedro Mallmann, 1795<br>Estrela – RS</a></p>
+          <p class="mb-2"><a class="text-reset text-decoration-none"
+              href="https://maps.app.goo.gl/rAY23y7jj8yYVJD88">Rua Cel Neves, 394 – Medianeira<br>Porto Alegre – RS</a>
+          </p>
+          <div class="mt-2"><a href="https://www.instagram.com/engiproelevadores" target="_blank"
+              class="text-white me-2"><i class="fab fa-instagram fa-lg"></i></a></div>
         </div>
       </div>
     </div>
     <!-- Botão WhatsApp flutuante -->
-    <a href="https://api.whatsapp.com/send?phone=5551998031542" class="whatsapp-button position-fixed bottom-0 end-0 m-4 bg-success text-white rounded-circle p-3 shadow" target="_blank" style="z-index:9999;">
+    <a href="https://api.whatsapp.com/send?phone=5551998031542"
+      class="whatsapp-button position-fixed bottom-0 end-0 m-4 bg-success text-white rounded-circle p-3 shadow"
+      target="_blank" style="z-index:9999;">
       <i class="fab fa-whatsapp fa-2x"></i>
     </a>
   </footer>
@@ -264,40 +321,10 @@
   <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
-
   <!-- Animations -->
-  <script>
-    // GSAP setup
-    gsap.registerPlugin(ScrollTrigger);
+  <script src="assets/js/roleta.js"></script>
 
-    // Hero animation
-    gsap.from("#heroTitle", { y: 50, opacity: 0, duration: 1 });
-    gsap.from("#heroButtons", { y: 30, opacity: 0, duration: 0.8, delay: 0.3 });
 
-    // Service cards – fade-up when in viewport
-    gsap.utils.toArray(".service-card").forEach(card => {
-      gsap.from(card, {
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        scrollTrigger: {
-          trigger: card,
-          start: "top 85%",
-        }
-      })
-    });
-
-    // Client logos – pop-in effect
-    gsap.from(".client-logo", {
-      scale: 0.5,
-      opacity: 0,
-      stagger: 0.1,
-      duration: 0.6,
-      scrollTrigger: {
-        trigger: "#clientes",
-        start: "top 90%",
-      }
-    });
-  </script>
 </body>
+
 </html>
