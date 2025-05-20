@@ -22,26 +22,46 @@
     });
   }
 
-  // inicia quando a seção #clientes aparecer
+// Registro do plugin GSAP ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
+// Quando o DOM estiver carregado, duplica o conteúdo de cada track e inicia a animação ao entrar na viewport
+document.addEventListener("DOMContentLoaded", () => {
+  const tracks = document.querySelectorAll('.client-track');
+  // Duplica cada faixa para loop contínuo
+  tracks.forEach(track => {
+    track.innerHTML += track.innerHTML;
+  });
+
+  // Cria o ScrollTrigger para iniciar a animação quando a seção Clientes aparecer
   ScrollTrigger.create({
     trigger: "#clientes",
     start: "top 80%",
-    onEnter: startClientLoop,
+    onEnter: () => startClientLoop(tracks),
     once: true
   });
-document.addEventListener("DOMContentLoaded", function() {
-  const tracks = document.querySelectorAll('.client-track');
-  tracks.forEach(track => {
-    track.innerHTML += track.innerHTML; // Duplica o conteúdo
-  });
 });
-  document.addEventListener("DOMContentLoaded", () => {
-    const track = document.querySelector(".client-track");
-    const items = Array.from(track.children);
 
-    // Duplicar os itens para criar o efeito de loop
-    items.forEach((item) => {
-      const clone = item.cloneNode(true);
-      track.appendChild(clone);
+/**
+ * Inicia o loop de animação em cada track GSAP
+ * @param {NodeListOf<Element>} tracks
+ */
+function startClientLoop(tracks) {
+  const pxPerSecond = parseFloat(getComputedStyle(document.documentElement)
+    .getPropertyValue('--marquee-speed')) || 100;
+
+  tracks.forEach(track => {
+    // track.offsetWidth já contém largura duplicada, usamos metade para deslocar
+    const totalWidth = track.offsetWidth;
+    const shiftWidth = totalWidth / 2;
+    const duration = shiftWidth / pxPerSecond;
+
+    // Animação contínua com GSAP
+    gsap.to(track, {
+      x: -shiftWidth,
+      ease: 'none',
+      duration: duration,
+      repeat: -1
     });
   });
+}

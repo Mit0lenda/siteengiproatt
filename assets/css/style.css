@@ -1,14 +1,118 @@
+/* --- Social Media Cards GSAP Reveal --- */
+.social-card {
+  cursor: pointer;
+  background: #fff;
+  transition: box-shadow .3s, background .3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  position: relative;
+  z-index: 1;
+  min-height: 160px;
+  outline: none;
+}
+.social-card .card-front {
+  z-index: 1;
+}
+.social-card .card-reveal {
+  z-index: 2;
+  pointer-events: none;
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  opacity: 0;
+  transform: translateY(100%);
+  transition: none;
+}
+.card-instagram { background: #e4405f !important; color: #fff; }
+.card-linkedin  { background: #0077b5 !important; color: #fff; }
+.card-whatsapp  { background: #25d366 !important; color: #fff; }
+.card-instagram .card-reveal { background: #fff; color: #e4405f; }
+.card-linkedin  .card-reveal { background: #fff; color: #0077b5; }
+.card-whatsapp  .card-reveal { background: #fff; color: #25d366; }
+.social-card:focus-visible { box-shadow: 0 0 0 3px var(--primary, #74A69C); }
+/* --- Social Media Cards --- */
+.social-card {
+  cursor: pointer;
+  background: #fff;
+  transition: transform .3s cubic-bezier(.4,2,.6,1), box-shadow .3s, background .3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  position: relative;
+  z-index: 1;
+}
+.social-card .social-subtitle {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .3s, transform .3s;
+}
+.social-card .social-overlay {
+  pointer-events: none;
+  background: rgba(255,255,255,0.7);
+  height: 60%;
+  top: 100%;
+  left: 0;
+  transition: top .35s cubic-bezier(.4,2,.6,1);
+  z-index: 2;
+}
+.social-card:hover, .social-card:focus {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+}
+.social-card:hover .social-overlay,
+.social-card:focus .social-overlay {
+  top: 40%;
+}
+.social-card:hover .social-subtitle,
+.social-card:focus .social-subtitle {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Brand backgrounds */
+.card-instagram { background: #e4405f !important; color: #fff; }
+.card-linkedin  { background: #0077b5 !important; color: #fff; }
+.card-whatsapp  { background: #25d366 !important; color: #fff; }
+.card-instagram .social-overlay { background: rgba(255,255,255,0.18); }
+.card-linkedin  .social-overlay { background: rgba(255,255,255,0.18); }
+.card-whatsapp  .social-overlay { background: rgba(255,255,255,0.18); }
 /* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+/* Cores da marca */
+:root {
+  --primary: #74A69C;
+  --primary-dark: #5F8375;
+  --black: #000000;
+  --white: #ffffff;
+  --gray-light: #f4f4f4;
+  --gray: #888888;
+  --gray-background: #f5f5f5;
+  --section-alt: #f0f0f0;
+  --section-dark: #111111;
+}
+/* BOOTSTRAP DEFAULT OVERRIDES: substituir azul pelo bege/verde da marca */
+:root {
+  --bs-primary: var(--primary);
+  --bs-secondary: var(--gray);
+  --bs-dark: var(--black);
+  --bs-white: var(--white);
+  /* Remover variações de azul primário do Bootstrap */
+  --bs-info: var(--primary-dark);
+  --bs-link-hover-color: var(--primary-dark);
+}
+
+/* Utilitários personalizados para garantir identidade sem azul */
+.text-primary { color: var(--primary) !important; }
+.bg-primary { background-color: var(--primary) !important; }
+.btn-primary { background-color: var(--primary) !important; border-color: var(--primary) !important; }
+.btn-primary:hover { background-color: var(--primary-dark) !important; }
+.btn-outline-primary { color: var(--primary) !important; border-color: var(--primary) !important; }
+.btn-outline-primary:hover { background-color: var(--primary) !important; color: var(--white) !important; }
+.badge.bg-primary { background-color: var(--primary) !important; color: var(--white) !important; }
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #f9f9f9;
-  color: #333;
+  background: var(--gray-background);
+  color: var(--black);
   line-height: 1.6;
   padding-top: 70px; /* espaço para header fixo */
 }
@@ -21,9 +125,10 @@ body {
 }
 
 /* HEADER */
+/* HEADER */
 .header {
-  background: #222;
-  color: #fff;
+  background: var(--black);
+  color: var(--white);
   position: fixed;
   width: 100%;
   top: 0;
@@ -48,13 +153,13 @@ body {
 }
 
 .nav a {
-  color: white;
+  color: var(--white);
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .nav a:hover {
-  color: #ff9900;
+  color: var(--primary);
 }
 
 /* Botão de menu (mobile) */
@@ -68,8 +173,8 @@ body {
 
 /* Footer */
 footer {
-  background: #222;
-  color: #fff;
+  background: var(--black);
+  color: var(--white);
   text-align: center;
   padding: 20px;
 }
@@ -94,6 +199,10 @@ footer {
 
   .menu-toggle {
     display: block;
+  }
+  /* Ensure navbar toggler icon is visible in black */
+  .navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='%23000000' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
   }
 }
 
@@ -162,7 +271,7 @@ footer {
   .client-track {
     display: flex;
     gap: 2rem;
-    animation: scroll 40s linear infinite; /* 40s = movimento mais lento */
+    animation: scroll 40s linear infinite; /* loop contínuo mais suave */
   }
 
   .client-track img {
@@ -211,5 +320,27 @@ footer {
 
 .client-grid img:hover {
   transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+/* Botões e Badges com cores da marca */
+.btn-primary {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: var(--white) !important;
+}
+.btn-primary:hover {
+  background-color: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
+}
+.btn-outline-primary {
+  color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+.btn-outline-primary:hover {
+  background-color: var(--primary) !important;
+  color: var(--white) !important;
+}
+.badge.bg-primary {
+  background-color: var(--primary) !important;
+  color: var(--white) !important;
 }
 
