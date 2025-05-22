@@ -1,157 +1,206 @@
-/* =======================================================
+/* =====================================================================
    RESET & VARIÁVEIS
-======================================================= */
-*{margin:0;padding:0;box-sizing:border-box}
+===================================================================== */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 
 :root{
-  /* Paleta */
-  --primary:#74A69C;        --primary-dark:#5F8375;
-  --black:#111;             --white:#fff;
-  --gray:#888;              --gray-light:#f4f4f4; --gray-bg:#f5f5f5;
+  /* Paleta (mantida do CSS antigo) */
+  --primary:#74A69C;        /* verde ENGIPRO */
+  --primary-dark:#5F8375;
+  --black:#111;
+  --white:#fff;
+  --gray:#888;
+  --gray-bg:#f5f5f5;
 
   /* Bootstrap override */
-  --bs-primary:var(--primary);   --bs-secondary:var(--gray);
-  --bs-dark:var(--black);        --bs-white:var(--white);
-  --bs-info:var(--primary-dark); --bs-link-hover-color:var(--primary-dark);
+  --bs-primary:var(--primary);
+  --bs-secondary:var(--gray);
+  --bs-dark:var(--black);
+  --bs-white:var(--white);
+  --bs-info:var(--primary-dark);
 
-  /* velocidade carrossel (px/s) */
+  /* velocidade marquee (px/s) */
   --marquee-speed:40;
 }
 
-/* =======================================================
-   BASE
-======================================================= */
+html{scroll-behavior:smooth}
+
 body{
-  font-family:'Segoe UI',sans-serif;background:var(--gray-bg);
-  color:var(--black);line-height:1.6;
-  padding-top:110px; /* header fixo (logo 80 + contatos + nav) */
+  font-family:'Segoe UI',sans-serif;
+  background:var(--gray-bg);
+  color:var(--black);
+  line-height:1.6;
+  /* se o header for fixed, descomente a linha abaixo */
+  /* padding-top:110px;  */
 }
 
-/* utilitários rápidos */
+a{color:inherit;text-decoration:none}
+
+/* helpers ---------------------------------------------------------- */
 .text-primary{color:var(--primary)!important}
 .bg-primary{background:var(--primary)!important}
-.btn-primary{background:var(--primary)!important;border-color:var(--primary)!important;color:var(--white)!important}
-.btn-primary:hover{background:var(--primary-dark)!important;border-color:var(--primary-dark)!important}
-.btn-outline-primary{color:var(--primary)!important;border-color:var(--primary)!important}
-.btn-outline-primary:hover{background:var(--primary)!important;color:var(--white)!important}
+.btn-primary{
+  background:var(--primary)!important;
+  border-color:var(--primary)!important;
+  color:#fff!important;
+}
+.btn-primary:hover{
+  background:var(--primary-dark)!important;
+  border-color:var(--primary-dark)!important;
+}
+.btn-outline-primary{
+  color:var(--primary)!important;
+  border-color:var(--primary)!important;
+}
+.btn-outline-primary:hover{
+  background:var(--primary)!important;
+  color:#fff!important;
+}
 
-/* =======================================================
+/* =====================================================================
    HEADER
-======================================================= */
-header{position:sticky;top:0;z-index:999;background:var(--white);border-bottom:1px solid #e5e5e5}
-
-/* ---------- linha 1: logo + hamburger ---------- */
-header .top-bar{display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem}
-.logo{height:80px}                 /* desktop */
-@media(max-width:567.98px){.logo{height:64px}}  /* mobile */
-
-/* ---------- hamburger ---------- */
-.hamburger{
-  --h:2px;--w:22px;display:flex;flex-direction:column;gap:6px;cursor:pointer;
-  width:var(--w);height:calc(var(--h)*3 + 12px)
+===================================================================== */
+header.site-header{
+  position:sticky;top:0;left:0;right:0;z-index:999;
+  background:var(--white);
+  border-bottom:1px solid #e5e5e5;
 }
-.hamburger span{width:var(--w);height:var(--h);background:var(--primary);border-radius:2px;transition:.3s}
-#menu-toggle:checked+label span:nth-child(1){transform:translateY(8px) rotate(45deg)}
-#menu-toggle:checked+label span:nth-child(2){opacity:0}
-#menu-toggle:checked+label span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+.logo{height:80px}
+@media(max-width:567.98px){.logo{height:64px}}
 
-/* ---------- bloco de contato (desktop ≥768) ---------- */
-.contact-bar{
-  display:none
-}
+/* barra de contacto (md+) */
+.contact-bar{display:none}
 @media(min-width:768px){
   .contact-bar{
-    display:flex;justify-content:flex-end;align-items:center;
-    gap:1.5rem;padding:.35rem 1rem;border-top:1px solid #efefef;border-bottom:1px solid #efefef;
-    font-size:.875rem;font-weight:600;color:var(--gray)
+    display:flex;gap:1.5rem;padding:.35rem 1rem;
+    border-block:1px solid #efefef;
+    font:600 .875rem/1 'Segoe UI',sans-serif;
+    color:var(--gray);
   }
-  .contact-bar a{color:inherit;text-decoration:none;transition:.25s}
+  .contact-bar a{transition:.2s}
   .contact-bar a:hover{color:var(--primary)}
-  .contact-bar .vr{width:1px;height:1.25rem;background:#ddd}
 }
 
-/* ---------- navegação ---------- */
+/* navegação -------------------------------------------------------- */
 #mainNav{
-  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
-  gap:2rem;padding:.75rem 1rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase
+  gap:2rem;padding:.75rem 1rem;
+  font:700 .9rem/1 'Segoe UI',sans-serif;
+  letter-spacing:.04em;text-transform:uppercase;
 }
-#mainNav .nav-link{color:var(--black);text-decoration:none;position:relative;transition:.25s}
+#mainNav .nav-link{position:relative;transition:.25s}
 #mainNav .nav-link:hover,#mainNav .nav-link:focus{color:var(--primary)}
 @media(min-width:992px){
-  #mainNav{margin-left:auto}
-  #mainNav .nav-link:after{
-    content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--primary-dark);
-    transition:.3s
+  #mainNav{display:flex;margin-left:auto}
+  #mainNav .nav-link::after{
+    content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;
+    background:var(--primary-dark);transition:.3s;
   }
-  #mainNav .nav-link:hover:after,#mainNav .nav-link:focus:after{width:100%}
+  #mainNav .nav-link:hover::after{width:100%}
 }
 
-/* --- exibe / oculta menu mobile --- */
+/* menu mobile (collapse lateral) ---------------------------------- */
 @media(max-width:991.98px){
-  #mainNav{display:none}
-  #menu-toggle:checked~#mainNav{display:flex!important;flex-direction:column;gap:1rem}
+  .navbar-collapse{
+    position:fixed;inset:80px 0 0 auto;width:100%;max-width:280px;
+    padding:2rem 1.25rem;display:flex!important;flex-direction:column;gap:1rem;
+    background:var(--white);box-shadow:-4px 0 12px rgba(0,0,0,.08);
+    transform:translateX(100%);opacity:0;transition:.35s ease;
+  }
+  .navbar-collapse.collapsing{transform:translateX(100%);opacity:0}
+  .navbar-collapse.show{transform:none;opacity:1}
 }
 
-/* =======================================================
+/* ícone hamburger no verde da marca */
+.navbar-toggler-icon{
+  background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%2374A69C' viewBox='0 0 16 16'%3e%3cpath d='M1.5 12.5h13v-1H1.5zm0-4h13v-1h-13zm0-4h13v-1h-13z'/%3e%3c/svg%3e");
+}
+
+/* =====================================================================
    HERO
-======================================================= */
-.hero{position:relative;min-height:60vh;background:url('../img/banners/banner.jpeg') center/cover no-repeat;
-      display:flex;align-items:center;justify-content:center;text-align:center;color:#fff}
-.hero .overlay{position:absolute;inset:0;background:#000;opacity:.55}
-
-/* =======================================================
-   NAV-PILLS (about)
-======================================================= */
-#about .nav-pills .nav-link{
-  color:var(--primary);background:transparent;border:2px solid var(--primary);
-  border-radius:50rem;margin-right:.5rem;transition:.3s
+===================================================================== */
+.hero{
+  position:relative;min-height:65vh;
+  background:url('../img/banners/banner.jpeg') center/cover fixed;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;color:#fff;
 }
-#about .nav-pills .nav-link.active,
-#about .nav-pills .nav-link:focus{color:#fff;background:var(--primary);border-color:var(--primary)}
-#about .nav-pills .nav-link:hover:not(.active){background:var(--primary-dark);color:#fff;border-color:var(--primary-dark)}
+.hero .overlay{position:absolute;inset:0;background:#000;opacity:.55}
+/* badge 15 anos */
+.hero .badge-exp{
+  position:absolute;top:1.5rem;left:50%;transform:translateX(-50%);
+  background:var(--primary);color:#fff;padding:.4rem 1.25rem;
+  border-radius:50rem;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;box-shadow:0 2px 8px rgba(0,0,0,.25);
+  animation:pulse 3s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%,100%{transform:translateX(-50%) scale(1)}
+  50%    {transform:translateX(-50%) scale(1.06)}
+}
 
-/* =======================================================
-   SOCIAL-CARDS
-======================================================= */
-.social-card{position:relative;min-height:160px;display:flex;flex-direction:column;cursor:pointer;
-  background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.07);transition:transform .3s cubic-bezier(.4,2,.6,1),box-shadow .3s}
+/* =====================================================================
+   DESTAQUE DE CLIENTES
+===================================================================== */
+#clientes-destaque{padding:3rem 0;background:#fff}
+#clientes-destaque .logo-grid{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;
+}
+#clientes-destaque img{
+  height:50px;object-fit:contain;
+  filter:grayscale(1) brightness(.9);opacity:.85;transition:.25s;
+}
+#clientes-destaque img:hover{filter:none;opacity:1}
+
+/* =====================================================================
+   MARQUEE CLIENTES
+===================================================================== */
+@keyframes scrollX{to{transform:translateX(-100%)}}
+.client-scrollers{display:flex;flex-direction:column;gap:2rem}
+.client-scroller{overflow:hidden;height:80px}
+.client-track{
+  display:flex;gap:2rem;
+  animation:scrollX linear infinite;
+}
+.client-track img{
+  height:60px;max-width:120px;object-fit:contain;flex:0 0 auto;
+  filter:grayscale(1) brightness(.9);transition:.25s;
+}
+.client-track img:hover{filter:none;transform:scale(1.05)}
+@media(prefers-reduced-motion:reduce){.client-track{animation:none}}
+
+/* =====================================================================
+   CARDS SERVIÇOS
+===================================================================== */
+.service-card img{height:160px;object-fit:cover}
+.service-card .card-title{font-size:1rem;font-weight:700}
+
+/* =====================================================================
+   SOCIAL CARDS
+===================================================================== */
+.social-card{
+  position:relative;min-height:160px;display:flex;flex-direction:column;
+  background:#fff;cursor:pointer;overflow:hidden;
+  box-shadow:0 2px 8px rgba(0,0,0,.08);transition:.3s;
+}
 .social-card .card-front,.social-card .card-reveal{
-  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;line-height:1.2;padding:2rem 1rem
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:2rem 1rem;line-height:1.2;
 }
 .social-card .card-front i{font-size:2.4rem;margin-bottom:.5rem}
-.social-card .social-subtitle{opacity:0;transform:translateY(20px);transition:.3s}
-.social-card:hover,.social-card:focus{
-  transform:translateY(-8px) scale(1.03);box-shadow:0 8px 24px rgba(0,0,0,.13)
+.social-card .card-reveal{
+  position:absolute;inset:0;opacity:0;pointer-events:none;transition:.3s;
 }
-.social-card:hover .social-subtitle,.social-card:focus .social-subtitle{opacity:1;transform:none}
-.social-card:focus-visible{box-shadow:0 0 0 3px var(--primary)}
+.social-card:hover{
+  transform:translateY(-6px) scale(1.03);box-shadow:0 8px 24px rgba(0,0,0,.13);
+}
+.social-card:hover .card-reveal{opacity:1}
 .card-instagram{background:#e4405f!important;color:#fff}
 .card-linkedin {background:#0077b5!important;color:#fff}
 .card-whatsapp{background:#25d366!important;color:#fff}
 
-/* =======================================================
-   CLIENTES – MARQUEE
-======================================================= */
-@keyframes scrollX{to{transform:translateX(-100%)}}
-.client-scrollers{display:flex;flex-direction:column;gap:2rem}
-.client-scroller{overflow:hidden;height:80px;display:flex;align-items:center}
-.client-track{display:flex;gap:2rem;animation:scrollX linear infinite}
-.client-track img{
-  height:60px;max-width:120px;object-fit:contain;flex:0 0 auto;transition:.3s;
-  filter:grayscale(1) brightness(.9)
-}
-.client-track img:hover{transform:scale(1.08);filter:grayscale(0) brightness(1)}
-@media(hover:none){.client-track img{filter:none}.client-track img:hover{transform:none}}
-@media(prefers-reduced-motion:reduce){.client-track{animation:none}}
-
-/* =======================================================
-   SERVIÇOS
-======================================================= */
-.service-card img{height:160px;object-fit:cover}
-
-/* =======================================================
-   SOBRE NÓS – Galeria
-======================================================= */
+/* =====================================================================
+   ABOUT – GALERIA
+===================================================================== */
 .about-gallery{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .about-gallery .gallery-img{width:100%;height:300px;object-fit:cover;border-radius:.5rem}
 @media(max-width:991.98px){
@@ -159,13 +208,14 @@ header .top-bar{display:flex;align-items:center;justify-content:space-between;pa
   .about-gallery .gallery-img{height:auto}
 }
 
-/* =======================================================
+/* =====================================================================
    FOOTER
-======================================================= */
+===================================================================== */
 .footer-site{background:var(--black);color:#fff;font-size:1rem}
-.footer-link{color:#d9d9d9;text-decoration:none;transition:.25s}
-.footer-link:hover,.footer-link:focus{color:#fff;text-decoration:underline}
-.footer-site hr{border-color:#444}
-.footer-site .small{font-size:.95rem}
-@media(max-width:767.98px){.footer-site .container .row{text-align:center}}
-.badge:hover{background:var(--primary);transform:scale(1.05)}
+.footer-link{color:#d9d9d9;text-decoration:none;transition:.2s}
+.footer-link:hover{color:#fff;text-decoration:underline}
+
+/* =====================================================================
+   UTILIDADES
+===================================================================== */
+@media(max-width:575.98px){h1{font-size:2rem}}
