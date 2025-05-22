@@ -1,346 +1,171 @@
-/* --- Social Media Cards GSAP Reveal --- */
-.social-card {
-  cursor: pointer;
-  background: #fff;
-  transition: box-shadow .3s, background .3s;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-  position: relative;
-  z-index: 1;
-  min-height: 160px;
-  outline: none;
-}
-.social-card .card-front {
-  z-index: 1;
-}
-.social-card .card-reveal {
-  z-index: 2;
-  pointer-events: none;
-  background: #fff;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
-  opacity: 0;
-  transform: translateY(100%);
-  transition: none;
-}
-.card-instagram { background: #e4405f !important; color: #fff; }
-.card-linkedin  { background: #0077b5 !important; color: #fff; }
-.card-whatsapp  { background: #25d366 !important; color: #fff; }
-.card-instagram .card-reveal { background: #fff; color: #e4405f; }
-.card-linkedin  .card-reveal { background: #fff; color: #0077b5; }
-.card-whatsapp  .card-reveal { background: #fff; color: #25d366; }
-.social-card:focus-visible { box-shadow: 0 0 0 3px var(--primary, #74A69C); }
-/* --- Social Media Cards --- */
-.social-card {
-  cursor: pointer;
-  background: #fff;
-  transition: transform .3s cubic-bezier(.4,2,.6,1), box-shadow .3s, background .3s;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-  position: relative;
-  z-index: 1;
-}
-.social-card .social-subtitle {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity .3s, transform .3s;
-}
-.social-card .social-overlay {
-  pointer-events: none;
-  background: rgba(255,255,255,0.7);
-  height: 60%;
-  top: 100%;
-  left: 0;
-  transition: top .35s cubic-bezier(.4,2,.6,1);
-  z-index: 2;
-}
-.social-card:hover, .social-card:focus {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.13);
-}
-.social-card:hover .social-overlay,
-.social-card:focus .social-overlay {
-  top: 40%;
-}
-.social-card:hover .social-subtitle,
-.social-card:focus .social-subtitle {
-  opacity: 1;
-  transform: translateY(0);
-}
-/* Brand backgrounds */
-.card-instagram { background: #e4405f !important; color: #fff; }
-.card-linkedin  { background: #0077b5 !important; color: #fff; }
-.card-whatsapp  { background: #25d366 !important; color: #fff; }
-.card-instagram .social-overlay { background: rgba(255,255,255,0.18); }
-.card-linkedin  .social-overlay { background: rgba(255,255,255,0.18); }
-.card-whatsapp  .social-overlay { background: rgba(255,255,255,0.18); }
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-/* Cores da marca */
-:root {
-  --primary: #74A69C;
-  --primary-dark: #5F8375;
-  --black: #000000;
-  --white: #ffffff;
-  --gray-light: #f4f4f4;
-  --gray: #888888;
-  --gray-background: #f5f5f5;
-  --section-alt: #f0f0f0;
-  --section-dark: #111111;
-}
-/* BOOTSTRAP DEFAULT OVERRIDES: substituir azul pelo bege/verde da marca */
-:root {
-  --bs-primary: var(--primary);
-  --bs-secondary: var(--gray);
-  --bs-dark: var(--black);
-  --bs-white: var(--white);
-  /* Remover variações de azul primário do Bootstrap */
-  --bs-info: var(--primary-dark);
-  --bs-link-hover-color: var(--primary-dark);
+/* =======================================================
+   RESET & VARIÁVEIS
+======================================================= */
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  /* Paleta */
+  --primary:#74A69C;        --primary-dark:#5F8375;
+  --black:#111;             --white:#fff;
+  --gray:#888;              --gray-light:#f4f4f4; --gray-bg:#f5f5f5;
+
+  /* Bootstrap override */
+  --bs-primary:var(--primary);   --bs-secondary:var(--gray);
+  --bs-dark:var(--black);        --bs-white:var(--white);
+  --bs-info:var(--primary-dark); --bs-link-hover-color:var(--primary-dark);
+
+  /* velocidade carrossel (px/s) */
+  --marquee-speed:40;
 }
 
-/* Utilitários personalizados para garantir identidade sem azul */
-.text-primary { color: var(--primary) !important; }
-.bg-primary { background-color: var(--primary) !important; }
-.btn-primary { background-color: var(--primary) !important; border-color: var(--primary) !important; }
-.btn-primary:hover { background-color: var(--primary-dark) !important; }
-.btn-outline-primary { color: var(--primary) !important; border-color: var(--primary) !important; }
-.btn-outline-primary:hover { background-color: var(--primary) !important; color: var(--white) !important; }
-.badge.bg-primary { background-color: var(--primary) !important; color: var(--white) !important; }
-
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: var(--gray-background);
-  color: var(--black);
-  line-height: 1.6;
-  padding-top: 70px; /* espaço para header fixo */
+/* =======================================================
+   BASE
+======================================================= */
+body{
+  font-family:'Segoe UI',sans-serif;background:var(--gray-bg);
+  color:var(--black);line-height:1.6;
+  padding-top:110px; /* header fixo (logo 80 + contatos + nav) */
 }
 
-/* Container fixo */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+/* utilitários rápidos */
+.text-primary{color:var(--primary)!important}
+.bg-primary{background:var(--primary)!important}
+.btn-primary{background:var(--primary)!important;border-color:var(--primary)!important;color:var(--white)!important}
+.btn-primary:hover{background:var(--primary-dark)!important;border-color:var(--primary-dark)!important}
+.btn-outline-primary{color:var(--primary)!important;border-color:var(--primary)!important}
+.btn-outline-primary:hover{background:var(--primary)!important;color:var(--white)!important}
 
-/* HEADER */
-/* HEADER */
-.header {
-  background: var(--black);
-  color: var(--white);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 999;
-}
+/* =======================================================
+   HEADER
+======================================================= */
+header{position:sticky;top:0;z-index:999;background:var(--white);border-bottom:1px solid #e5e5e5}
 
-.header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 70px;
-}
+/* ---------- linha 1: logo + hamburger ---------- */
+header .top-bar{display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem}
+.logo{height:80px}                 /* desktop */
+@media(max-width:567.98px){.logo{height:64px}}  /* mobile */
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+/* ---------- hamburger ---------- */
+.hamburger{
+  --h:2px;--w:22px;display:flex;flex-direction:column;gap:6px;cursor:pointer;
+  width:var(--w);height:calc(var(--h)*3 + 12px)
 }
+.hamburger span{width:var(--w);height:var(--h);background:var(--primary);border-radius:2px;transition:.3s}
+#menu-toggle:checked+label span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+#menu-toggle:checked+label span:nth-child(2){opacity:0}
+#menu-toggle:checked+label span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
 
-.nav {
-  display: flex;
-  gap: 20px;
+/* ---------- bloco de contato (desktop ≥768) ---------- */
+.contact-bar{
+  display:none
 }
-
-.nav a {
-  color: var(--white);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.nav a:hover {
-  color: var(--primary);
-}
-
-/* Botão de menu (mobile) */
-.menu-toggle {
-  display: none;
-  background: none;
-  color: #fff;
-  font-size: 1.5rem;
-  border: none;
-}
-
-/* Footer */
-footer {
-  background: var(--black);
-  color: var(--white);
-  text-align: center;
-  padding: 20px;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: #222;
-    width: 100%;
-    text-align: center;
-    padding: 20px 0;
+@media(min-width:768px){
+  .contact-bar{
+    display:flex;justify-content:flex-end;align-items:center;
+    gap:1.5rem;padding:.35rem 1rem;border-top:1px solid #efefef;border-bottom:1px solid #efefef;
+    font-size:.875rem;font-weight:600;color:var(--gray)
   }
+  .contact-bar a{color:inherit;text-decoration:none;transition:.25s}
+  .contact-bar a:hover{color:var(--primary)}
+  .contact-bar .vr{width:1px;height:1.25rem;background:#ddd}
+}
 
-  .nav.active {
-    display: flex;
+/* ---------- navegação ---------- */
+#mainNav{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
+  gap:2rem;padding:.75rem 1rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase
+}
+#mainNav .nav-link{color:var(--black);text-decoration:none;position:relative;transition:.25s}
+#mainNav .nav-link:hover,#mainNav .nav-link:focus{color:var(--primary)}
+@media(min-width:992px){
+  #mainNav{margin-left:auto}
+  #mainNav .nav-link:after{
+    content:'';position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--primary-dark);
+    transition:.3s
   }
-
-  .menu-toggle {
-    display: block;
-  }
-  /* Ensure navbar toggler icon is visible in black */
-  .navbar-light .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='%23000000' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
-  }
+  #mainNav .nav-link:hover:after,#mainNav .nav-link:focus:after{width:100%}
 }
 
-/* ————————— Clientes – faixa deslizante corrigida ————————— */
-.client-scroller {
-  height: 80px;           /* altura fixa: 48px (logo) + ~16px de padding acima/baixo */
-  overflow: hidden;       /* esconde qualquer excesso em X ou Y */
-  position: relative;
-  margin-bottom: 2rem;    /* separa as fileiras */
-  display: flex;
-  align-items: center;    /* verticalmente centrado */
+/* --- exibe / oculta menu mobile --- */
+@media(max-width:991.98px){
+  #mainNav{display:none}
+  #menu-toggle:checked~#mainNav{display:flex!important;flex-direction:column;gap:1rem}
 }
 
-.client-track {
-  display: flex;
-  gap: 2rem;
-  /* A animação agora vai de 0 a -50% para o loop contínuo */
-  animation: scroll 40s linear infinite;
+/* =======================================================
+   HERO
+======================================================= */
+.hero{position:relative;min-height:60vh;background:url('../img/banners/banner.jpeg') center/cover no-repeat;
+      display:flex;align-items:center;justify-content:center;text-align:center;color:#fff}
+.hero .overlay{position:absolute;inset:0;background:#000;opacity:.55}
+
+/* =======================================================
+   NAV-PILLS (about)
+======================================================= */
+#about .nav-pills .nav-link{
+  color:var(--primary);background:transparent;border:2px solid var(--primary);
+  border-radius:50rem;margin-right:.5rem;transition:.3s
+}
+#about .nav-pills .nav-link.active,
+#about .nav-pills .nav-link:focus{color:#fff;background:var(--primary);border-color:var(--primary)}
+#about .nav-pills .nav-link:hover:not(.active){background:var(--primary-dark);color:#fff;border-color:var(--primary-dark)}
+
+/* =======================================================
+   SOCIAL-CARDS
+======================================================= */
+.social-card{position:relative;min-height:160px;display:flex;flex-direction:column;cursor:pointer;
+  background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.07);transition:transform .3s cubic-bezier(.4,2,.6,1),box-shadow .3s}
+.social-card .card-front,.social-card .card-reveal{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;line-height:1.2;padding:2rem 1rem
+}
+.social-card .card-front i{font-size:2.4rem;margin-bottom:.5rem}
+.social-card .social-subtitle{opacity:0;transform:translateY(20px);transition:.3s}
+.social-card:hover,.social-card:focus{
+  transform:translateY(-8px) scale(1.03);box-shadow:0 8px 24px rgba(0,0,0,.13)
+}
+.social-card:hover .social-subtitle,.social-card:focus .social-subtitle{opacity:1;transform:none}
+.social-card:focus-visible{box-shadow:0 0 0 3px var(--primary)}
+.card-instagram{background:#e4405f!important;color:#fff}
+.card-linkedin {background:#0077b5!important;color:#fff}
+.card-whatsapp{background:#25d366!important;color:#fff}
+
+/* =======================================================
+   CLIENTES – MARQUEE
+======================================================= */
+@keyframes scrollX{to{transform:translateX(-100%)}}
+.client-scrollers{display:flex;flex-direction:column;gap:2rem}
+.client-scroller{overflow:hidden;height:80px;display:flex;align-items:center}
+.client-track{display:flex;gap:2rem;animation:scrollX linear infinite}
+.client-track img{
+  height:60px;max-width:120px;object-fit:contain;flex:0 0 auto;transition:.3s;
+  filter:grayscale(1) brightness(.9)
+}
+.client-track img:hover{transform:scale(1.08);filter:grayscale(0) brightness(1)}
+@media(hover:none){.client-track img{filter:none}.client-track img:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){.client-track{animation:none}}
+
+/* =======================================================
+   SERVIÇOS
+======================================================= */
+.service-card img{height:160px;object-fit:cover}
+
+/* =======================================================
+   SOBRE NÓS – Galeria
+======================================================= */
+.about-gallery{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.about-gallery .gallery-img{width:100%;height:300px;object-fit:cover;border-radius:.5rem}
+@media(max-width:991.98px){
+  .about-gallery{grid-template-columns:1fr}
+  .about-gallery .gallery-img{height:auto}
 }
 
-.client-track img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.client-track img:hover {
-  transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
-}
-
-/* Animação de rolagem */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-/* acessibilidade: reduz movimento para quem preferir */
-@media (prefers-reduced-motion: reduce) {
-  .client-scroller { overflow-x: auto; }
-}
-:root {
-  /* quantos pixels por segundo queremos que a faixa percorra */
-  --marquee-speed: 100; 
-}
-  /* Contêiner dos clientes e animação de rolagem */
-  .client-scrollers {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem; /* Espaço entre os dois contêineres */
-  }
-
-  .client-scroller {
-    overflow: hidden;
-    position: relative;
-    height: 80px; /* Altura fixa, centraliza os logos */
-    display: flex;
-    align-items: center;
-    margin-bottom: 2rem;
-  }
-
-  .client-track {
-    display: flex;
-    gap: 2rem;
-    animation: scroll 40s linear infinite; /* loop contínuo mais suave */
-  }
-
-  .client-track img {
-    height: 48px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-  }
-
-  .client-track img:hover {
-    transform: scale(1.1); /* Efeito de zoom */
-  }
-
-  /* Keyframes para rolagem contínua */
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-
-  /* Acessibilidade: reduz movimento se preferir */
-  @media (prefers-reduced-motion: reduce) {
-    .client-track {
-      animation: none;
-    }
-  }
-
-/* Clientes - Grid */
-.client-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsivo */
-  gap: 20px;
-  justify-items: center;
-  align-items: center;
-}
-
-.client-grid img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.client-grid img:hover {
-  transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
-}
-/* Botões e Badges com cores da marca */
-.btn-primary {
-  background-color: var(--primary) !important;
-  border-color: var(--primary) !important;
-  color: var(--white) !important;
-}
-.btn-primary:hover {
-  background-color: var(--primary-dark) !important;
-  border-color: var(--primary-dark) !important;
-}
-.btn-outline-primary {
-  color: var(--primary) !important;
-  border-color: var(--primary) !important;
-}
-.btn-outline-primary:hover {
-  background-color: var(--primary) !important;
-  color: var(--white) !important;
-}
-.badge.bg-primary {
-  background-color: var(--primary) !important;
-  color: var(--white) !important;
-}
-
+/* =======================================================
+   FOOTER
+======================================================= */
+.footer-site{background:var(--black);color:#fff;font-size:1rem}
+.footer-link{color:#d9d9d9;text-decoration:none;transition:.25s}
+.footer-link:hover,.footer-link:focus{color:#fff;text-decoration:underline}
+.footer-site hr{border-color:#444}
+.footer-site .small{font-size:.95rem}
+@media(max-width:767.98px){.footer-site .container .row{text-align:center}}
+.badge:hover{background:var(--primary);transform:scale(1.05)}
