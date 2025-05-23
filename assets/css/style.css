@@ -1,4 +1,4 @@
-/* assets/css/style.css - VERSÃO UNIFICADA COMPLETA (Revisada) */
+/* assets/css/style.css - VERSÃO UNIFICADA COMPLETA (Logo Maior, Sem Fundo na Barra de Contato) */
 
 /* ===================================================================
    RESET & VARIÁVEIS GLOBAIS
@@ -170,13 +170,15 @@ button:focus-visible,
 }
 
 .site-header .logo {
-  height: 70px;
+  height: 90px;
+  /* LOGO MAIOR */
   padding: 0.5rem 0;
 }
 
 @media (max-width: 767.98px) {
   .site-header .logo {
-    height: 60px;
+    height: 75px;
+    /* LOGO MAIOR EM MOBILE */
   }
 }
 
@@ -189,7 +191,8 @@ button:focus-visible,
     display: flex;
     gap: 1.25rem;
     padding: .4rem 1rem;
-    background-color: var(--gray-bg);
+    /* background-color: var(--gray-bg); */
+    /* FUNDO REMOVIDO */
     border-bottom: 1px solid var(--gray-border);
     font: 600 .8rem/1 var(--font-sans-serif);
     color: var(--gray-medium);
@@ -331,8 +334,10 @@ body.showNavigationSlide {
 =================================================================== */
 .hero {
   position: relative;
-  min-height: 65vh;
-  background: url('../img/banners/banner.jpeg') center/cover fixed;
+  min-height: 80vh;
+  /* Altura aumentada como na sua última versão do CSS */
+  background: url('../img/banners/banner3.png') 75% top / cover no-repeat;
+  /* Usando a imagem e posicionamento da sua última versão */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -340,6 +345,7 @@ body.showNavigationSlide {
   color: var(--white);
   padding: var(--section-padding-y) 1rem;
 }
+
 
 .hero .overlay {
   position: absolute;
@@ -357,28 +363,32 @@ body.showNavigationSlide {
   text-shadow:
     1px 1px 2px rgba(0, 0, 0, 0.7),
     0 0 5px rgba(0, 0, 0, 0.5);
-  animation: heroTitlePulse 3s ease-in-out infinite alternate;
+  /*animation: heroTitlePulse 3s ease-in-out infinite alternate;*/
+  /* Animação removida conforme solicitado anteriormente */
 }
 
+/* Definição @keyframes heroTitlePulse mantida comentada caso queira reativar no futuro */
+/*
 @keyframes heroTitlePulse {
-  0% {
-    text-shadow:
-      1px 1px 2px rgba(0, 0, 0, 0.7),
-      0 0 5px rgba(0, 0, 0, 0.5),
-      0 0 10px rgba(255, 255, 255, 0.3),
-      0 0 20px rgba(255, 255, 255, 0.2),
-      0 0 30px rgba(255, 255, 255, 0.1);
-  }
+  0% {
+    text-shadow:
+      1px 1px 2px rgba(0, 0, 0, 0.7),
+      0 0 5px rgba(0, 0, 0, 0.5),
+      0 0 10px rgba(255, 255, 255, 0.3),
+      0 0 20px rgba(255, 255, 255, 0.2),
+      0 0 30px rgba(255, 255, 255, 0.1);
+  }
 
-  100% {
-    text-shadow:
-      1px 1px 2px rgba(0, 0, 0, 0.7),
-      0 0 5px rgba(0, 0, 0, 0.5),
-      0 0 15px rgba(255, 255, 255, 0.6),
-      0 0 25px rgba(255, 255, 255, 0.5),
-      0 0 40px rgba(255, 255, 255, 0.4);
-  }
+  100% {
+    text-shadow:
+      1px 1px 2px rgba(0, 0, 0, 0.7),
+      0 0 5px rgba(0, 0, 0, 0.5),
+      0 0 15px rgba(255, 255, 255, 0.6),
+      0 0 25px rgba(255, 255, 255, 0.5),
+      0 0 40px rgba(255, 255, 255, 0.4);
+  }
 }
+*/
 
 .hero .btn-lg {
   padding: 0.8rem 2rem;
@@ -839,6 +849,64 @@ body.showNavigationSlide {
   }
 
   .hero-title {
-    animation: none !important;
+    /* animation: none !important; */
+    /* Animação já removida do seletor principal */
   }
+}
+/* Abrir dropdown da navbar com hover em telas maiores (desktop) */
+@media (min-width: 992px) { /* Aplica apenas em telas 'lg' e maiores, onde a navbar não está colapsada */
+  .navbar .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* Ajuste para remover qualquer espaço extra que possa surgir */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Garante que esteja na posição correta */
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out; /* Transição suave opcional */
+  }
+
+  /* Opcional: Melhorar a experiência de hover para que o menu não feche imediatamente
+     se o mouse sair brevemente do link principal para o submenu. */
+  .navbar .nav-item.dropdown {
+    position: relative; /* Garante que o dropdown-menu seja posicionado em relação a este item */
+  }
+
+  /* Estilo para quando o dropdown está visível via hover (para a transição) */
+  .navbar .nav-item.dropdown .dropdown-menu {
+    opacity: 0;
+    visibility: hidden;
+    display: block; /* Necessário para calcular a posição antes da transição */
+    transform: translateY(10px); /* Efeito sutil de surgir de baixo */
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, visibility 0s linear 0.2s;
+    /* O 'visibility 0s linear 0.2s' esconde após a transição de opacidade terminar */
+  }
+
+  /* Para garantir que o data-bs-toggle="dropdown" não interfira no hover em desktop,
+     mas ainda funcione no mobile, podemos deixar o HTML como está,
+     pois o CSS acima tem maior especificidade para o hover em desktop. */
+}
+
+/* Ajustes adicionais para o dropdown (opcional, mas melhora a aparência) */
+.navbar .dropdown-menu {
+  border-radius: var(--border-radius, 0.375rem); /* Usar o raio de borda do seu tema */
+  border: 1px solid var(--gray-border, #dee2e6);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+  /* min-width: 220px; */ /* Defina uma largura mínima se necessário */
+}
+
+.navbar .dropdown-menu .dropdown-item {
+  font-size: 0.85rem; /* Ajustar tamanho da fonte dos itens do dropdown */
+  padding: 0.5rem 1rem;
+  text-transform: none; /* Remove o uppercase se não desejar nos itens */
+  font-weight: 500; /* Peso da fonte normal para os itens */
+  color: var(--bs-dark);
+}
+
+.navbar .dropdown-menu .dropdown-item:hover,
+.navbar .dropdown-menu .dropdown-item:focus {
+  background-color: var(--primary, #74A69C);
+  color: var(--white, #fff);
+}
+
+.navbar .dropdown-menu .dropdown-divider {
+  border-top: 1px solid var(--gray-border, #dee2e6);
 }

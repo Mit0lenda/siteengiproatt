@@ -1,0 +1,162 @@
+/* assets/css/manutencao.css - Estilos Específicos para Páginas de Serviço */
+
+/* ===================================================================
+    ESTILOS PARA O TÍTULO DA PÁGINA E BREADCRUMBS
+=================================================================== */
+.page-title-section {
+  border-bottom: 1px solid var(--gray-border, #dee2e6);
+  background-color: var(--bs-light, #f8f9fa);
+}
+
+.page-main-title {
+  color: var(--bs-dark, #212529);
+  font-weight: 700;
+  font-size: var(--fs-h2);
+}
+
+.breadcrumb-item a {
+  color: var(--primary, #74A69C);
+  text-decoration: none;
+}
+.breadcrumb-item a:hover {
+  text-decoration: underline;
+}
+.breadcrumb-item.active {
+  color: var(--gray-medium, #6c757d);
+}
+
+/* ===================================================================
+    SIDEBAR / MENU LATERAL
+=================================================================== */
+.sidebar-widget {
+  background-color: var(--white, #fff);
+  border: 1px solid var(--gray-border, #dee2e6);
+  border-radius: var(--border-radius, 0.375rem);
+}
+
+.widget-title {
+  font-size: 1.15rem;
+  color: var(--bs-dark, #212529);
+  padding-bottom: 0.65rem;
+  margin-bottom: 0.9rem;
+  border-bottom: 2px solid var(--primary, #74A69C);
+  display: inline-block;
+  font-weight: 600;
+}
+
+.service-sidebar-nav .list-group-item {
+  border-left: none;
+  border-right: none;
+  border-top-color: var(--gray-border, #dee2e6);
+  border-bottom-color: var(--gray-border, #dee2e6);
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  font-size: 0.9rem;
+  color: var(--bs-body-color, #212529);
+}
+.service-sidebar-nav .list-group-item:first-child {
+  border-top: none;
+}
+
+.service-sidebar-nav .list-group-item .fa-chevron-right {
+  font-size: 0.75em;
+  opacity: 0.5;
+  margin-top: 4px;
+}
+
+.service-sidebar-nav .list-group-item:hover,
+.service-sidebar-nav .list-group-item:focus {
+  background-color: var(--gray-bg, #f5f5f5);
+  color: var(--primary, #74A69C);
+}
+
+.service-sidebar-nav .list-group-item.active {
+  background-color: var(--primary, #74A69C);
+  border-color: var(--primary, #74A69C);
+  color: var(--white, #fff);
+  font-weight: 600;
+}
+
+.service-sidebar-nav .list-group-item.active .fa-chevron-right {
+  opacity: 1;
+  color: var(--white, #fff);
+}
+
+.service-sidebar-nav .list-group-item:hover .fa-chevron-right,
+.service-sidebar-nav .list-group-item:focus .fa-chevron-right {
+  opacity: 1;
+}
+
+/* ===================================================================
+    CONTEÚDO PRINCIPAL DO SERVIÇO (COLUNA DA DIREITA)
+=================================================================== */
+.service-content .service-main-image {
+  max-height: 400px;
+  object-fit: cover;
+  margin-bottom: 1.75rem !important;
+  border-radius: var(--border-radius);
+}
+
+.service-content .service-main-title.h3 {
+  color: var(--bs-dark, #212529);
+  font-weight: 700;
+  font-size: 1.75rem;
+}
+
+.service-content p {
+  line-height: 1.75;
+  margin-bottom: 1.15rem;
+  color: var(--gray-medium, #6c757d);
+  font-size: 0.95rem;
+}
+.service-content p:last-of-type {
+    margin-bottom: 1rem; /* Ajuste para parágrafo antes de uma lista ou alerta */
+}
+
+
+.service-content .h4 {
+  color: var(--primary-dark, #5F8375);
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.service-checklist {
+  padding-left: 0;
+  list-style: none;
+}
+.service-checklist li {
+  padding-left: 0;
+  margin-bottom: 0.85rem !important;
+  color: var(--gray-medium, #6c757d);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: flex-start;
+}
+.service-checklist li i.fas.fa-check {
+  color: var(--primary, #74A69C) !important;
+  margin-right: 0.75rem;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.alert-primary {
+  background-color: rgba(var(--primary-rgb), 0.1);
+  border-color: rgba(var(--primary-rgb), 0.3);
+  color: var(--primary-dark, #5F8375);
+}
+.alert-primary strong {
+    color: inherit;
+}
+.alert-primary .fa-info-circle,
+.alert-primary .fa-lightbulb { /* Adicionado para o ícone do alerta de modernização */
+  color: var(--primary, #74A69C);
+}
+
+@media (max-width: 991.98px) {
+  .service-content .service-main-image {
+    max-height: 300px;
+  }
+  .sidebar-widget {
+     margin-bottom: 2rem !important; /* Garante a margem no HTML para mobile */
+  }
+}

@@ -1,0 +1,199 @@
+
+/* ===================================================================
+    ESTILOS PARA O TÍTULO DA PÁGINA E BREADCRUMBS
+=================================================================== */
+.page-title-section {
+  /* O style.css já deve definir --gray-border e --primary,
+     mas podemos adicionar um fallback se este CSS for usado isoladamente. */
+  border-bottom: 1px solid var(--gray-border, #dee2e6);
+  background-color: var(--bs-light, #f8f9fa); /* Usa a cor de fundo light do tema */
+}
+
+.page-main-title {
+  color: var(--bs-dark, #212529); /* Usa a cor escura do tema para o título */
+  font-weight: 700; /* Peso da fonte do style.css */
+  font-size: var(--fs-h2); /* Usa a variável de tamanho de título do style.css */
+}
+
+.breadcrumb-item a {
+  color: var(--primary, #74A69C); /* Cor primária do style.css */
+  text-decoration: none;
+}
+.breadcrumb-item a:hover {
+  text-decoration: underline;
+}
+.breadcrumb-item.active {
+  color: var(--gray-medium, #6c757d); /* Cor cinza do style.css */
+}
+
+/* ===================================================================
+    LAYOUT DA PÁGINA DE SERVIÇO (Sidebar + Conteúdo)
+=================================================================== */
+/* A estrutura de colunas (col-lg-3, col-lg-9) é definida pelo Bootstrap no HTML.
+   Podemos adicionar espaçamentos se necessário. */
+
+/* ===================================================================
+    SIDEBAR / MENU LATERAL ESPECÍFICO DA PÁGINA DE MANUTENÇÃO
+=================================================================== */
+.sidebar-widget {
+  background-color: var(--white, #fff); /* Fundo branco para o widget */
+  border: 1px solid var(--gray-border, #dee2e6);
+  border-radius: var(--border-radius, 0.375rem); /* Raio de borda do tema */
+  /* O padding p-3 já está no HTML, pode ser ajustado aqui se precisar de mais. */
+}
+
+.widget-title {
+  font-size: 1.15rem; /* Tamanho um pouco menor que h5 padrão */
+  color: var(--bs-dark, #212529);
+  padding-bottom: 0.65rem;
+  margin-bottom: 0.9rem;
+  border-bottom: 2px solid var(--primary, #74A69C); /* Cor primária do tema */
+  display: inline-block;
+  font-weight: 600; /* Um pouco menos que o h5 padrão */
+}
+
+.service-sidebar-nav .list-group-item {
+  border-left: none; /* Remove bordas laterais do list-group padrão */
+  border-right: none;
+  border-top-color: var(--gray-border, #dee2e6);
+  border-bottom-color: var(--gray-border, #dee2e6);
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  font-size: 0.9rem; /* Fonte um pouco menor para o menu */
+  color: var(--bs-body-color, #212529);
+  /* Transições já vêm do style.css para 'a' e do Bootstrap para list-group-item-action */
+}
+.service-sidebar-nav .list-group-item:first-child {
+  border-top: none; /* Remove borda do topo do primeiro item se o widget já tem padding */
+}
+.service-sidebar-nav .list-group-item:last-child {
+   /* A borda inferior do último item é mantida pelo list-group */
+}
+
+.service-sidebar-nav .list-group-item .fa-chevron-right {
+  font-size: 0.75em;
+  opacity: 0.5;
+  margin-top: 4px; /* Ajuste fino vertical */
+}
+
+.service-sidebar-nav .list-group-item:hover,
+.service-sidebar-nav .list-group-item:focus {
+  background-color: var(--gray-bg, #f5f5f5); /* Usa a cor de fundo light do tema para hover */
+  color: var(--primary, #74A69C); /* Cor primária no hover */
+}
+
+.service-sidebar-nav .list-group-item.active {
+  background-color: var(--primary, #74A69C); /* Cor primária para o item ativo */
+  border-color: var(--primary, #74A69C);
+  color: var(--white, #fff); /* Texto branco no item ativo */
+  font-weight: 600; /* Mesmo peso dos botões do tema */
+}
+
+.service-sidebar-nav .list-group-item.active .fa-chevron-right {
+  opacity: 1;
+  color: var(--white, #fff);
+}
+
+.service-sidebar-nav .list-group-item:hover .fa-chevron-right,
+.service-sidebar-nav .list-group-item:focus .fa-chevron-right {
+  opacity: 1;
+}
+
+
+/* ===================================================================
+    CONTEÚDO PRINCIPAL DO SERVIÇO (COLUNA DA DIREITA)
+=================================================================== */
+.service-content .service-main-image {
+  max-height: 400px; /* Ajuste conforme necessário */
+  object-fit: cover;
+  margin-bottom: 1.75rem !important; /* Espaçamento abaixo da imagem principal */
+  border-radius: var(--border-radius);
+}
+
+.service-content .service-main-title.h3 { /* Título principal do conteúdo da página */
+  color: var(--bs-dark, #212529);
+  font-weight: 700; /* Já definido em h3, mas reforçando */
+  font-size: 1.75rem; /* Um pouco maior que h4 padrão */
+}
+
+.service-content p {
+  line-height: 1.75; /* Melhorar legibilidade */
+  margin-bottom: 1.15rem;
+  color: var(--gray-medium, #6c757d); /* Cor de texto padrão para parágrafos */
+  font-size: 0.95rem; /* Levemente menor para mais texto */
+}
+
+.service-content .h4 { /* Subtítulos dentro do conteúdo */
+  color: var(--primary-dark, #5F8375); /* Cor primária escura para subtítulos */
+  font-weight: 600;
+  font-size: 1.3rem; /* Tamanho para subtítulos */
+}
+
+.service-checklist {
+  padding-left: 0;
+  list-style: none; /* Garante que não haja marcadores padrão */
+}
+.service-checklist li {
+  padding-left: 0; /* Ícone controlará o recuo */
+  margin-bottom: 0.85rem !important;
+  color: var(--gray-medium, #6c757d);
+  font-size: 0.95rem;
+  display: flex; /* Para alinhar ícone e texto */
+  align-items: flex-start; /* Alinha ícone com o topo do texto */
+}
+.service-checklist li i.fas.fa-check {
+  color: var(--primary, #74A69C) !important;
+  margin-right: 0.75rem; /* Espaço entre ícone e texto */
+  margin-top: 4px; /* Ajuste vertical do ícone */
+  flex-shrink: 0; /* Para o ícone não encolher */
+}
+
+.alert-primary { /* Ajuste no alerta para usar cores do tema */
+  background-color: rgba(var(--primary-rgb), 0.1);
+  border-color: rgba(var(--primary-rgb), 0.3);
+  color: var(--primary-dark, #5F8375);
+}
+.alert-primary strong {
+    color: inherit; /* Herda a cor do .alert-primary */
+}
+.alert-primary .fa-info-circle {
+  color: var(--primary, #74A69C);
+}
+
+/* Ajustes Responsivos Específicos para esta página, se necessário */
+@media (max-width: 991.98px) {
+  .service-content .service-main-image {
+    max-height: 300px;
+  }
+  .sidebar-widget {
+    /* mb-5 já está no HTML para mobile, pode não precisar de mais aqui */
+  }
+}
+/* Adicione ou ajuste no seu arquivo CSS relevante (manutencao.css ou style.css) */
+
+.service-image-carousel .carousel-item img {
+  max-height: 400px; /* Ajuste esta altura conforme desejado */
+  object-fit: cover;
+  width: 100%;
+}
+
+.service-image-carousel .carousel-control-prev-icon,
+.service-image-carousel .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.4); /* Fundo para melhor visibilidade dos ícones das setas */
+  border-radius: 0.25rem;
+  background-size: 50%; /* Ajusta o tamanho do ícone SVG interno */
+}
+
+.service-image-carousel .carousel-indicators [data-bs-target] {
+    background-color: rgba(var(--primary-rgb), 0.6); /* Cor primária semi-transparente para indicadores */
+}
+
+.service-image-carousel .carousel-indicators .active {
+    background-color: var(--primary); /* Cor primária sólida para indicador ativo */
+}
+
+@media (max-width: 767.98px) {
+  .service-image-carousel .carousel-item img {
+    max-height: 280px; /* Altura menor para mobile, ajuste conforme necessário */
+  }
+}
