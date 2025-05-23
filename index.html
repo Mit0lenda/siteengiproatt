@@ -5,46 +5,48 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>ENGIPRO Elevadores</title>
 
-  <!-- Meta -->
+  <!-- SEO -->
   <meta name="description" content="ENGIPRO Elevadores – 15 anos oferecendo manutenção, modernização e soluções completas em transporte vertical.">
   <meta name="author"      content="ENGIPRO Elevadores">
   <link rel="canonical" href="https://engipro.com.br/">
-  <link rel="icon"     type="image/png" href="assets/img/icones/fav.png">
+  <link rel="icon" type="image/png" href="assets/img/icones/fav.png">
 
   <!-- Social -->
-  <meta property="og:title"   content="ENGIPRO Elevadores – Soluções em transporte vertical">
-  <meta property="og:image"   content="https://engipro.com.br/assets/img/og-image.jpg">
-  <meta property="og:type"    content="website">
-  <meta property="og:locale"  content="pt_BR">
-  <meta name="twitter:card"   content="summary_large_image">
+  <meta property="og:title"  content="ENGIPRO Elevadores – Soluções em transporte vertical">
+  <meta property="og:image"  content="https://engipro.com.br/assets/img/og-image.jpg">
+  <meta property="og:type"   content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card"  content="summary_large_image">
 
   <!-- Vendors -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Projeto -->
+  <!-- Projeto (CSS virá depois) -->
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="preload" as="image" href="assets/img/banners/banner.jpeg">
 </head>
 <body>
 
-<!-- =============================== HEADER =============================== -->
-<header class="site-header border-bottom shadow-sm bg-white">
+<!-- ================================================= HEADER -->
+<header class="site-header shadow-sm bg-white">
   <div class="container-fluid px-lg-5">
 
-    <!-- 1 ▸ LOGO · CONTATO · TOGGLER -->
+    <!-- LOGO · CONTATO · TOGGLER -->
     <div class="d-flex align-items-center py-2">
       <a href="/" class="me-4 flex-shrink-0">
-        <img src="assets/img/logo/logo.png" alt="ENGIPRO Elevadores" class="logo" height="80">
+        <img src="assets/img/logo/logo.png" alt="ENGIPRO Elevadores" class="logo img-fluid">
       </a>
 
+      <!-- contatos (desktop) -->
       <ul class="contact-bar d-none d-md-flex ms-auto fw-semibold small">
-        <li><i class="fa-solid fa-location-dot text-primary me-1"></i><a href="#">Porto Alegre / RS</a></li>
-        <li><i class="fa-solid fa-location-dot text-primary me-1"></i><a href="#">Estrela / RS</a></li>
+        <li><i class="fa-solid fa-location-dot text-primary me-1"></i><a href="https://www.google.com/maps/place/R.+Cel.+Neves,+394+-+Medianeira,+Porto+Alegre+-+RS,+90870-280/@-30.0668314,-51.2084292,17z/data=!3m1!4b1!4m6!3m5!1s0x95197870e143710d:0xa1afde121caf2c52!8m2!3d-30.0668314!4d-51.2084292!16s%2Fg%2F11t0vs1d65?entry=tts&g_ep=EgoyMDI0MDUyMi4wKgBIAVAD">Porto Alegre / RS</a></li>
+        <li><i class="fa-solid fa-location-dot text-primary me-1"></i><a href="https://www.google.com.br/maps/place/Engipro+-+Manuten%C3%A7%C3%A3o+de+Elevadores/@-29.5684667,-51.9440561,17z/data=!4m6!3m5!1s0x951c7c8350a45ceb:0xd308dc91e17cee56!8m2!3d-29.5684667!4d-51.9414812!16s%2Fg%2F11f_27khd_?entry=tts&g_ep=EgoyMDI0MDUyMi4wKgBIAVAD">Estrela / RS</a></li>
         <li><i class="fa-solid fa-envelope text-primary me-1"></i><a href="mailto:vendas@engipro.com.br">vendas@engipro.com.br</a></li>
         <li><i class="fa-solid fa-phone text-primary me-1"></i><a href="tel:+555137127233">(51) 3712-7233</a></li>
       </ul>
 
+      <!-- toggler mobile -->
       <button class="navbar-toggler d-lg-none border-0 ms-auto"
               type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
               aria-controls="mainNav" aria-expanded="false" aria-label="Menu">
@@ -52,11 +54,12 @@
       </button>
     </div>
 
+    <!-- NAVEGAÇÃO -->
     <nav class="navbar navbar-expand-lg w-100">
       <div id="mainNav"
-           class="collapse navbar-collapse flex-column flex-lg-row gap-3 gap-lg-5 py-2 text-uppercase fw-bold">
+           class="collapse navbar-collapse justify-content-center gap-3 gap-lg-5 py-2 text-uppercase fw-bold">
         <a class="nav-link" href="/">Home</a>
-        <a class="nav-link" href="#about">Quem Somos</a>
+        <a class="nav-link" href="#about">Quem somos</a>
         <a class="nav-link" href="#servicos">Serviços</a>
         <a class="nav-link" href="#clientes">Clientes</a>
         <a class="nav-link" href="#contato">Contato</a>
@@ -69,82 +72,88 @@
 <section id="hero" class="hero">
   <div class="overlay"></div>
   <div class="container position-relative z-1 py-5 text-center">
-    <h1 class="display-4 fw-bold mb-3">Soluções em<br class="d-none d-md-block">Elevadores</h1>
-    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
-      <a href="#servicos" class="btn btn-outline-light">Nossos serviços</a>
-      <a href="#contato" class="btn btn-primary">Fale conosco</a>
-    </div>
-    <div style="display: flex; gap: 2rem; justify-content: center; margin-top: 1rem;">
-  <div style="text-align: center;">
-    <strong style="font-size: 1.25rem;">15+</strong><br/>
-    <small>Anos de experiência</small>
-  </div>
-  <div style="text-align: center;">
-    <strong style="font-size: 1.25rem;">250+</strong><br/>
-    <small>Elevadores instalados</small>
-  </div>
-</div>
+    <h1 class="hero-title fw-bold mb-3">Soluções em <br class="d-none d-md-block">Elevadores</h1>
 
+    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+<a href="#servicos" class="btn btn-outline-light btn-lg">Nossos serviços</a>
+<a href="#contato" class="btn btn-primary btn-lg">Fale conosco</a>
+
+    </div>
+
+    <!-- estatísticas -->
+<div class="d-flex justify-content-center gap-3 mt-2">
+      <div>
+        <span class="stat-number">+15</span><br>
+        <small>Anos de experiência</small>
+      </div>
+      <div>
+        <span class="stat-number">+250</span><br>
+        <small>Elevadores instalados</small>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ======================= CLIENTES EM DESTAQUE -->
 <section id="clientes-destaque">
   <div class="container">
-    <h2 class="text-center fs-4 fw-bold mb-4">Clientes em destaque</h2>
-  <div class="container">
+    <h2 class="section-title">Principais Clientes</h2>
+
     <div class="logo-grid">
-      <img src="assets/img/clientes/assembleia.png"  alt="Assembleia Legislativa">
-      <img src="assets/img/clientes/senac.png"       alt="Senac">
-      <img src="assets/img/clientes/sicred.png"      alt="Sicred">
-      <img src="assets/img/clientes/policia-federal.png" alt="Polícia Federal">
-      <img src="assets/img/clientes/tribunal-contas-estado.png" alt="TCE-RS">
-      <img src="assets/img/clientes/cnec.png"        alt="Faculdade CNEC">
-      <img src="assets/img/clientes/asbrev.png"      alt="Asbrev">
-      <img src="assets/img/clientes/criamigos.png"   alt="Mundo Criamigos">
-      <img src="assets/img/clientes/datwyler.png"    alt="Datwyler">
+      <img src="assets/img/clientes/assembleia.png"  alt="Assembleia Legislativa" class="img-fluid">
+      <img src="assets/img/clientes/senac.png"       alt="Senac"                  class="img-fluid">
+      <img src="assets/img/clientes/sicredi.png"      alt="Sicred"                 class="img-fluid">
+      <img src="assets/img/clientes/policia federal.png"        alt="Polícia Federal" class="img-fluid">
+      <img src="assets/img/clientes/tce-rs.png" alt="TCE-RS"          class="img-fluid">
+      <img src="assets/img/clientes/cnec.png"        alt="CNEC"                   class="img-fluid">
+      <img src="assets/img/clientes/asbrav.png"      alt="Asbrav"                 class="img-fluid">
+      <img src="assets/img/clientes/criamigos.png"   alt="Mundo Criamigos"        class="img-fluid">
+      <img src="assets/img/clientes/datwyler.png"    alt="Datwyler"               class="img-fluid">
+      <img src="assets/img/clientes/seara.png"       alt="Seara"                  class="img-fluid">
     </div>
   </div>
 </section>
 
-<!-- ================================================= CLIENTES (marquee) -->
+<!-- ================================================= MARQUEE CLIENTES -->
 <section id="clientes" class="py-5 bg-white">
   <div class="container">
-    <h2 class="text-center fs-4 fw-bold mb-4">Mais clientes</h2>
+    <h2 class="section-title">Todos os nossos clientes</h2>
 
     <div class="client-scrollers">
+      <!-- FAIXA A -->
       <div class="client-scroller">
         <div class="client-track">
-          <!-- 1ª faixa -->
           <img src="assets/img/clientes/assembleia.png" alt="">
           <img src="assets/img/clientes/senac.png"      alt="">
-          <img src="assets/img/clientes/sicred.png"     alt="">
-          <img src="assets/img/clientes/policia-federal.png" alt="">
-          <img src="assets/img/clientes/tribunal-contas-estado.png" alt="">
-          <img src="assets/img/clientes/tribunal-justica-militar.png" alt="">
-          <img src="assets/img/clientes/conselho-biomedicina.png" alt="">
-          <img src="assets/img/clientes/cnec.png"       alt="">
-          <img src="assets/img/clientes/ufrgs.png"      alt="">
-          <img src="assets/img/clientes/asbrev.png"     alt="">
-          <img src="assets/img/clientes/criamigos.png"  alt="">
-          <img src="assets/img/clientes/datwyler.png"   alt="">
+          <img src="assets/img/clientes/sicredi.png"     alt="">
+          <img src="assets/img/clientes/policia federal.png" alt="">
+          <img src="assets/img/clientes/tce-rs.png" alt="">
+          <img src="assets/img/clientes/federal.png" alt="">
+          <img src="assets/img/clientes/gramadotur.png" alt="">
+          <img src="assets/img/clientes/cnec.png" alt="">
+          <img src="assets/img/clientes/ufrgs.png" alt="">
+          <img src="assets/img/clientes/asbrav.png" alt="">
+          <img src="assets/img/clientes/criamigos.png" alt="">
+          <img src="assets/img/clientes/datwyler.png" alt="">
+          <img src="assets/img/clientes/seara.png" alt="">
         </div>
       </div>
+
+      <!-- FAIXA B -->
       <div class="client-scroller">
         <div class="client-track">
-          <!-- 2ª faixa -->
-          <img src="assets/img/clientes/cra.png"        alt="">
-          <img src="assets/img/clientes/crc.png"        alt="">
-          <img src="assets/img/clientes/mpsc.png"       alt="">
-          <img src="assets/img/clientes/unipampa.png"   alt="">
-          <img src="assets/img/clientes/marinha.png"    alt="">
-          <img src="assets/img/clientes/justica-militar.png" alt="">
-          <img src="assets/img/clientes/prefeitura-gravatai.png" alt="">
-          <img src="assets/img/clientes/prefeitura-canoas.png"   alt="">
-          <img src="assets/img/clientes/prefeitura-novo-hamburgo.png" alt="">
-          <img src="assets/img/clientes/prefeitura-dois-irmaos.png"   alt="">
-          <img src="assets/img/clientes/seara.png"      alt="">
-          <img src="assets/img/clientes/ceasa.png"      alt="">
+          <img src="assets/img/clientes/cra.png" alt="">
+          <img src="assets/img/clientes/crc.png" alt="">
+          <img src="assets/img/clientes/mpsc.png" alt="">
+          <img src="assets/img/clientes/unipampa.png" alt="">
+          <img src="assets/img/clientes/marinha.png" alt="">
+          <img src="assets/img/clientes/federal.png" alt="">
+          <img src="assets/img/clientes/prefeitura de gravatai.png" alt="">
+          <img src="assets/img/clientes/prefeitura de canoas.png" alt="">
+          <img src="assets/img/clientes/prefeitura de novo hamburgo.png" alt="">
+          <img src="assets/img/clientes/prefeitura de dois irmãos.png" alt="">
+          <img src="assets/img/clientes/senar.png" alt="">
+          <img src="assets/img/clientes/ceasars.png" alt="">
         </div>
       </div>
     </div>
@@ -154,10 +163,12 @@
 <!-- ================================================= SERVIÇOS -->
 <section id="servicos" class="py-5 bg-light">
   <div class="container">
+    <h2 class="section-title">Nossos serviços</h2>
+
     <div class="row g-4">
       <div class="col-6 col-md-3">
         <div class="card h-100 shadow-sm service-card">
-          <img src="assets/img/cards/manutencao.jpeg" class="card-img-top" alt="">
+          <img src="assets/img/cards/manutencao.jpeg" class="card-img-top" alt="Manutenção de elevadores">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Manutenção de Elevadores</h5>
             <p class="card-text small flex-grow-1">Inspeção, reparos e testes para garantir funcionamento seguro.</p>
@@ -168,7 +179,7 @@
 
       <div class="col-6 col-md-3">
         <div class="card h-100 shadow-sm service-card">
-          <img src="assets/img/cards/modernizacao.jpg" class="card-img-top" alt="">
+          <img src="assets/img/cards/modernizacao.jpg" class="card-img-top" alt="Modernização de elevadores">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Modernização de Elevadores</h5>
             <p class="card-text small flex-grow-1">Atualização de sistemas e componentes para maior eficiência.</p>
@@ -179,7 +190,7 @@
 
       <div class="col-6 col-md-3">
         <div class="card h-100 shadow-sm service-card">
-          <img src="assets/img/cards/limpeza-poco.jpg" class="card-img-top" alt="">
+          <img src="assets/img/cards/limpeza-poco.jpg" class="card-img-top" alt="Limpeza de poço">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Limpeza de Poço de Elevador</h5>
             <p class="card-text small flex-grow-1">Remoção de resíduos e água para prevenir danos.</p>
@@ -190,7 +201,7 @@
 
       <div class="col-6 col-md-3">
         <div class="card h-100 shadow-sm service-card">
-          <img src="assets/img/cards/elevador-carga-1.jpg" class="card-img-top" alt="">
+          <img src="assets/img/cards/elevador-carga-1.jpg" class="card-img-top" alt="Elevador de carga">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Fabricação de Elevadores de Carga</h5>
             <p class="card-text small flex-grow-1">Projetos robustos e sob medida para movimentação de cargas.</p>
@@ -205,29 +216,43 @@
 <!-- ================================================= CONTATO -->
 <section id="contato" class="py-5 bg-light">
   <div class="container">
-    <div class="row gy-4">
-      <div class="col-lg-6">
-        <form class="row g-3 contact-form needs-validation" novalidate>
-          <h3 class="col-12">Fale Conosco</h3>
-          <div class="col-md-6">
-            <label class="form-label" for="nome">Nome</label>
-            <input id="nome" class="form-control" required>
-          </div>
-          <div class="col-md-6">
-            <label class="form-label" for="email">E-mail</label>
-            <input id="email" type="email" class="form-control" required>
-          </div>
-          <div class="col-12">
-            <label class="form-label" for="mensagem">Mensagem</label>
-            <textarea id="mensagem" rows="4" class="form-control" required></textarea>
-          </div>
-          <div class="col-12 text-end">
-            <button class="btn btn-primary px-4">Enviar</button>
-          </div>
-        </form>
-      </div>
+    <h2 class="section-title text-center mb-5">Entre em contato</h2>
 
-      <!-- Social cards -->
+<form class="row g-3 needs-validation" novalidate>
+  <div class="col-md-6">
+    <input type="text" class="form-control" placeholder="Seu Nome" required>
+  </div>
+  <div class="col-md-6">
+    <input type="email" class="form-control" placeholder="Seu Email" required>
+  </div>
+  <div class="col-md-6">
+    <input type="text" class="form-control" placeholder="Cep do equipamento">
+  </div>
+  <div class="col-md-6">
+    <input type="text" class="form-control" placeholder="Número">
+  </div>
+  <div class="col-md-6">
+    <input type="text" class="form-control" placeholder="Fabricante">
+  </div>
+  <div class="col-md-6">
+    <input type="text" class="form-control" placeholder="Número de andares">
+  </div>
+  <div class="col-md-6">
+    <input type="number" class="form-control" placeholder="Quantidade de elevadores">
+  </div>
+  <div class="col-md-6">
+    <input type="text" class="form-control" placeholder="Capacidade dos equipamentos">
+  </div>
+  <div class="col-12">
+    <textarea class="form-control" rows="5" placeholder="Mensagem"></textarea>
+  </div>
+  <div class="col-12 text-center">
+    <button class="btn btn-primary px-5 py-2 fw-bold text-uppercase">Enviar</button>
+  </div>
+</form>
+
+
+      <!-- social cards -->
       <div class="col-lg-6">
         <div class="row gy-4 text-center">
           <div class="col-4">
@@ -240,6 +265,7 @@
               </div>
             </div>
           </div>
+
           <div class="col-4">
             <div class="social-card card-linkedin rounded shadow h-100" tabindex="0" aria-label="LinkedIn">
               <div class="card-front"><i class="fab fa-linkedin"></i></div>
@@ -250,6 +276,7 @@
               </div>
             </div>
           </div>
+
           <div class="col-4">
             <div class="social-card card-whatsapp rounded shadow h-100" tabindex="0" aria-label="WhatsApp">
               <div class="card-front"><i class="fab fa-whatsapp"></i></div>
@@ -266,7 +293,7 @@
   </div>
 </section>
 
-<!-- ================================================= CTA 24h -->
+<!-- ================================================= CTA -->
 <section class="py-5 bg-primary text-white text-center">
   <div class="container">
     <div class="row g-4">
@@ -288,7 +315,7 @@
         <div class="p-4 bg-primary rounded shadow">
           <i class="fa-solid fa-building fa-2x mb-2"></i>
           <h5>Sedes no RS</h5>
-          <p>Estrela (Matriz) &amp; Porto Alegre</p>
+          <p>Estrela&nbsp;(Matriz) &amp; Porto Alegre</p>
         </div>
       </div>
     </div>
@@ -298,20 +325,23 @@
 <!-- ================================================= SOBRE NÓS -->
 <section id="about" class="py-5 bg-white">
   <div class="container">
+    <h2 class="section-title">Quem somos</h2>
+
     <div class="row align-items-center gy-4">
+      <!-- galeria -->
       <div class="col-12 col-lg-5 about-gallery">
-        <img src="assets/img/sobre/fabrica-1.jpg" class="gallery-img" alt="Fábrica ENGIPRO">
-        <img src="assets/img/sobre/frota.jpg"     class="gallery-img" alt="Frota ENGIPRO">
+        <img src="assets/img/sobre/sobrenos.JPG" class="gallery-img" alt="Fábrica ENGIPRO">
+        <img src="assets/img/sobre/sobrenos2.JPG" class="gallery-img" alt="Frota ENGIPRO">
       </div>
 
+      <!-- texto -->
       <div class="col-12 col-lg-7">
-        <h3 class="fw-bold mb-3">Um pouco sobre nós…</h3>
         <p class="mb-3">Fundada em 2014 na cidade de Estrela/RS, a ENGIPRO iniciou como fabricante de elevadores sociais, residenciais e plataformas de acessibilidade. Percebendo a carência de manutenção multimarcas de confiança, passamos a oferecer esse serviço em todo o Vale do Taquari e Região Metropolitana.</p>
         <p>Em 2024, com o crescimento em Porto Alegre e a chegada a novos clientes afetados por catástrofes naturais, abrimos nossa primeira filial, reforçando o compromisso em entregar produtos seguros, estáveis e de baixa manutenção.</p>
 
         <ul class="nav nav-pills mt-4" id="aboutTab" role="tablist">
           <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#missao">Missão</button></li>
-          <li class="nav-item"><button class="nav-link"        data-bs-toggle="tab" data-bs-target="#visao">Visão</button></li>
+          <li class="nav-item"><button class="nav-link"        data-bs-toggle="tab" data-bs-target="#visao" >Visão</button></li>
           <li class="nav-item"><button class="nav-link"        data-bs-toggle="tab" data-bs-target="#valores">Valores</button></li>
         </ul>
 
@@ -336,7 +366,7 @@
 
       <nav class="col-md-6 text-center text-md-end" aria-label="Rodapé">
         <ul class="list-inline mb-3">
-          <li class="list-inline-item"><a class="footer-link" href="#about">Quem Somos</a></li>
+          <li class="list-inline-item"><a class="footer-link" href="#about">Quem somos</a></li>
           <li class="list-inline-item"><a class="footer-link" href="#servicos">Serviços</a></li>
           <li class="list-inline-item"><a class="footer-link" href="#clientes">Clientes</a></li>
           <li class="list-inline-item"><a class="footer-link" href="#contato">Contato</a></li>
@@ -348,16 +378,18 @@
         </ul>
       </nav>
     </div>
+
     <hr class="border-secondary opacity-25 my-4">
+
     <div class="d-flex flex-column align-items-center pb-4 small">
       <span class="opacity-75 mb-2">&copy; 2025 ENGIPRO Elevadores. Todos os direitos reservados.</span>
       <a class="btn btn-primary text-white shadow-sm focus-ring py-2 px-3" href="https://codaryn.com" target="_blank" rel="noopener">Desenvolvido por <strong>Codaryn</strong></a>
     </div>
   </div>
 
-  <!-- Botão WhatsApp flutuante -->
+  <!-- WhatsApp flutuante -->
   <a class="whatsapp-button position-fixed bottom-0 end-0 m-4 bg-success text-white rounded-circle p-3 shadow"
-     href="https://api.whatsapp.com/send?phone=5551998031542" target="_blank" aria-label="Whatsapp">
+     href="https://api.whatsapp.com/send?phone=5551998031542" target="_blank" aria-label="WhatsApp">
     <i class="fab fa-whatsapp fa-2x"></i>
   </a>
 </footer>
