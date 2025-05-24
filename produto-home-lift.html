@@ -28,19 +28,19 @@
   <div class="container-fluid px-lg-5">
     <div class="d-flex align-items-center py-2">
       <a href="/" class="me-4 flex-shrink-0">
-        <img src="/assets/img/logo/logo.png" alt="ENGIPRO Elevadores" class="logo img-fluid">
+        <img src="assets/img/logo/logo.png" alt="ENGIPRO Elevadores" class="logo img-fluid">
       </a>
 
       <ul class="contact-bar d-none d-md-flex ms-auto fw-semibold small align-items-center">
         <li><i class="fa-solid fa-location-dot text-primary me-1"></i><a href="https://www.google.com/maps/search/?api=1&query=Engipro+Porto+Alegre+RS" target="_blank" rel="noopener">Porto Alegre / RS</a></li>
-        <li><i class="fa-solid fa-location-dot text-primary me-1"></i><a href="https://www.google.com.br/maps/place/Engipro+-+Manuten%C3%A7%C3%A3o+de+Elevadores/@-29.5684667,-51.9440561,17z/data=!4m6!3m5!1s0x951c7c8350a45ceb:0xd308dc91e17cee56!8m2!3d-29.5684667!4d-51.9414812!16s%2Fg%2F11f_27khd_?entry=tts" target="_blank" rel="noopener">Estrela / RS</a></li>
+        <li><i class="fa-solid fa-location-dot text-primary me-1"></i><a href="https://www.google.com.br/maps/place/Engipro+-+Manuten%C3%A7%C3%A3o+de+Elevadores/@-29.5684667,-51.9440561,17z/data=!4m6!3m5!1s0x951c7c8350a45ceb:0xd308dc91e17cee56!8m2!3d-29.5684667!4d-51.9414812!16s%2Fg%2F11f_27khd_?entry=tts&g_ep=EgoyMDI0MDUyMi4wKgBIAVAD" target="_blank" rel="noopener">Estrela / RS</a></li>
         <li><i class="fa-solid fa-envelope text-primary me-1"></i><a href="mailto:vendas@engipro.com.br">vendas@engipro.com.br</a></li>
         <li><i class="fa-solid fa-phone text-primary me-1"></i><a href="tel:+555137127233">(51) 3712-7233</a></li>
       </ul>
 
       <button class="navbar-toggler d-lg-none border-0 ms-auto"
               type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-              aria-controls="mainNav" aria-expanded="false" aria-label="Menu Principal">
+              aria-controls="mainNav" aria-expanded="false" aria-label="Menu">
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
@@ -55,13 +55,22 @@
             Serviços
           </a>
           <ul class="dropdown-menu" aria-labelledby="servicosDropdown">
-            <li><a class="dropdown-item" href="manutencao-elevador.html">Manutenção de Elevadores</a></li>
-            <li><a class="dropdown-item" href="modernizacao-elevador.html">Modernização de Elevadores</a></li>
-            <li><a class="dropdown-item" href="limpeza-poco.html">Limpeza de Poço</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="fabricacao-elevadores.html">Fabricação de Elevadores</a></li>
-            <li><a class="dropdown-item" href="plataformas-acessibilidade.html">Plataformas de Acessibilidade</a></li>
+            <li><a class="dropdown-item" href="manutencao.html">Manutenção de Elevadores</a></li>
+            <li><a class="dropdown-item" href="modernizacao.html">Modernização de Elevadores</a></li>
+            <li><a class="dropdown-item" href="fabrica-engipro.html">Fábrica ENGIPRO</a></li>
+            <li><a class="dropdown-item" href="plataformascomassebilidade.html">Plataformas de Acessibilidade</a></li>
+            <li><a class="dropdown-item" href="limpeza-poco.html">Limpeza de Poços</a></li>
             </ul>
+        </div>
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="produtosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Produtos
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="produtosDropdown">
+            <li><a class="dropdown-item" href="produto-home-lift.html">Home Lift (Residencial)</a></li>
+            <li><a class="dropdown-item" href="produto-elevador-social.html">Elevador Social</a></li>
+            <li><a class="dropdown-item" href="produto-elevador-carga.html">Elevadores de Carga</a></li>
+          </ul>
         </div>
         <a class="nav-link" href="/#clientes">Clientes</a>
         <a class="nav-link" href="/#contato">Contato</a>
@@ -87,11 +96,12 @@
   <section class="service-page-layout py-5"> <div class="container">
       <div class="row gx-lg-5">
 
-        <aside class="col-lg-3 mb-5 mb-lg-0">
+              <aside class="col-lg-3 mb-5 mb-lg-0">
           <div class="sidebar-widget p-3 shadow-sm">
             <h5 class="widget-title mb-3">Nossos Serviços</h5>
             <div class="list-group list-group-flush service-sidebar-nav">
-              <a href="/manutencao.html" class="list-group-item list-group-item-action">
+
+              <a href="/manutencao.html" class="list-group-item list-group-item-action ">
                 Manutenção de Elevadores
                 <i class="fas fa-chevron-right float-end"></i>
               </a>
@@ -105,6 +115,10 @@
               </a>
               <a href="/plataformascomassebilidade.html" class="list-group-item list-group-item-action">
                 Plataformas de Acessibilidade
+                <i class="fas fa-chevron-right float-end"></i>
+              </a>
+              <a href="/limpeza-poco.html" class="list-group-item list-group-item-action">
+                Limpeza de Poços
                 <i class="fas fa-chevron-right float-end"></i>
               </a>
             </div>
@@ -128,7 +142,32 @@
         </aside>
 
         <article class="col-lg-9 service-content">
-          <img src="assets/img/produtos/home-lift-destaque.jpg" class="img-fluid rounded shadow-sm mb-4 w-100 service-main-image" alt="Home Lift moderno instalado em uma residência elegante">
+                <div id="manutencaoImagensCarousel" class="carousel slide mb-4 shadow-sm service-image-carousel" data-bs-ride="carousel" data-bs-interval="6000">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#manutencaoImagensCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Imagem do Serviço 1"></button>
+          <button type="button" data-bs-target="#manutencaoImagensCarousel" data-bs-slide-to="1" aria-label="Imagem do Serviço 2"></button>
+          <button type="button" data-bs-target="#manutencaoImagensCarousel" data-bs-slide-to="2" aria-label="Imagem do Serviço 3"></button>
+          </div>
+        <div class="carousel-inner rounded">
+          <div class="carousel-item active">
+            <img src="/assets/img/cards/manutencaoelevadores/lift-software.jpeg" class="d-block w-100" alt="Técnico especialista realizando manutenção preventiva em elevador ENGIPRO">
+            </div>
+          <div class="carousel-item">
+            <img src="/assets/img/cards/manutencaoelevadores/maintaince.png" class="d-block w-100" alt="Detalhe de componentes internos durante inspeção de elevador">
+            </div>
+          <div class="carousel-item">
+            <img src="/assets/img/cards/manutencaoelevadores/manutention.png" class="d-block w-100" alt="Elevador moderno com indicativo de manutenção em dia">
+            </div>
+          </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#manutencaoImagensCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#manutencaoImagensCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+      </div>
           <h2 class="service-main-title h3 mb-3 fw-bold">Home Lift: Conforto, Elegância e Acessibilidade para Sua Residência</h2>
 
           <p>O Home Lift, ou elevador residencial, é a solução ideal para quem busca adicionar conforto, praticidade e valorização ao seu lar. Projetado para se integrar perfeitamente à arquitetura da sua casa, o Home Lift da ENGIPRO Elevadores combina design sofisticado com tecnologia de ponta, proporcionando um transporte vertical seguro e suave entre os andares.</p>
@@ -227,6 +266,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
-<script src="assets/js/main.js" defer></script>
+<script src="/assets/js/main.js" defer></script>
 </body>
 </html>
