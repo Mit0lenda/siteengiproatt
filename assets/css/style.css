@@ -910,3 +910,20 @@ body.showNavigationSlide {
 .navbar .dropdown-menu .dropdown-divider {
   border-top: 1px solid var(--gray-border, #dee2e6);
 }
+/* assets/css/style.css */
+
+/* ... outros estilos ... */
+
+.cta-section .btn-cta-custom {
+  background-color: var(--white); /* Fundo branco */
+  color: var(--primary);          /* Texto na cor primária */
+  border-color: var(--white);     /* Borda opcional, pode ser --primary também */
+  font-weight: 600;
+}
+
+.cta-section .btn-cta-custom:hover,
+.cta-section .btn-cta-custom:focus {
+  background-color: var(--gray-bg); /* Ou uma cor de hover mais escura se preferir */
+  color: var(--primary-dark);
+  border-color: var(--gray-bg);
+}
