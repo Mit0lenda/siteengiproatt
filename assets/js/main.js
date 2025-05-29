@@ -296,3 +296,34 @@
   });
 
 })();
+document.addEventListener('DOMContentLoaded', function () {
+    const carouselElement = document.getElementById('plataformasCarousel');
+    const video = document.getElementById('carouselVideo');
+
+    if (!carouselElement || !video) {
+        // console.warn('Elemento do carrossel ou vídeo não encontrado.');
+        return;
+    }
+
+    const manageVideoPlayback = () => {
+        const activeItem = carouselElement.querySelector('.carousel-item.active');
+        if (activeItem && activeItem.contains(video)) {
+            video.play().catch(error => {
+                console.warn("A reprodução automática do vídeo foi impedida pelo navegador:", error);
+                // Navegadores podem bloquear autoplay se não houver interação do usuário,
+                // mas 'muted' geralmente permite.
+            });
+        } else {
+            video.pause();
+            // Opcional: resetar o vídeo para o início quando não estiver ativo
+            // video.currentTime = 0;
+        }
+    };
+
+    // Evento disparado após a transição de um slide do carrossel ser completada
+    carouselElement.addEventListener('slid.bs.carousel', manageVideoPlayback);
+
+    // Verifica o estado inicial no carregamento da página
+    // (caso o slide do vídeo seja o primeiro a ser exibido)
+    manageVideoPlayback();
+});

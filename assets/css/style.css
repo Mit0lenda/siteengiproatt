@@ -975,3 +975,53 @@ body.showNavigationSlide {
   color: var(--primary-dark);
   border-color: var(--gray-bg);
 }
+/* ===================================================================
+   CARROSSEL DE IMAGENS E VÍDEO (Revisão para Corrigir Bug de Navegação)
+=================================================================== */
+.service-image-carousel .carousel-inner {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    /* Considerar um background aqui apenas se os itens não cobrirem 100% e vazar */
+    /* background-color: #f8f9fa; */
+}
+
+.service-image-carousel .carousel-item {
+    /* REMOVEMOS height, display:flex, align-items, justify-content e overflow:hidden daqui
+       para deixar o Bootstrap controlar o layout básico do item.
+       A altura será determinada pelo conteúdo de cada slide. */
+    text-align: center; /* Ajuda a centralizar o vídeo se ele for display: inline-block */
+}
+
+/* Fundo para o slide do vídeo */
+.service-image-carousel .carousel-item.video-slide {
+    background-color: #000000; /* Fundo preto para o slide do vídeo */
+    /* Se a altura do carrossel variar muito, você pode dar uma min-height aqui
+       ou ao .service-image-carousel como um todo, mas comece sem. */
+    /* min-height: 400px; */ /* Exemplo, ajuste ou remova */
+}
+
+/* Fundo para os slides de imagem */
+.service-image-carousel .carousel-item.image-slide {
+    background-color: #ffffff; /* Fundo branco para os slides de imagem */
+}
+
+.service-image-carousel .carousel-item img {
+    /* Para fazer a imagem ocupar 100% da largura e sua altura definir a do slide: */
+    /* Certifique-se que a tag img no HTML tem class="d-block w-100" */
+
+    /* Se você quiser que TODAS as imagens tenham uma ALTURA MÁXIMA e usem object-fit: */
+    max-height: 450px; /* Defina uma altura MÁXIMA para as imagens, ajuste! */
+    width: auto;       /* Para manter a proporção com max-height */
+    margin: 0 auto;    /* Para centralizar se a largura for menor que a do carrossel */
+    object-fit: contain; /* Para ver a imagem inteira, pode ter barras */
+    /* Se quiser que preencha e corte, use object-fit: cover e defina width/height fixos
+       ou use a imagem para definir a altura via d-block w-100 no HTML e não defina altura aqui. */
+}
+
+.service-image-carousel .carousel-item video {
+    display: inline-block; /* Para respeitar o text-align: center do pai */
+    vertical-align: middle; /* Alinha melhor se o slide for mais alto que o vídeo */
+    max-width: 300px;  /* Seu estilo inline para a caixa do vídeo */
+    max-height: 450px; /* Altura máxima para o vídeo, ajuste se necessário */
+    object-fit: contain; /* Para ver o vídeo inteiro */
+}
