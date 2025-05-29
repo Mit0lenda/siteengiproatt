@@ -336,7 +336,7 @@ body.showNavigationSlide {
   position: relative;
   min-height: 80vh;
   /* Altura aumentada como na sua última versão do CSS */
-  background: url('../img/banners/banner3.png') 75% top / cover no-repeat;
+  background: url('../img/banners/ChatGPT\ Image\ 29\ de\ mai.\ de\ 2025\,\ 10_21_34.png') 75% top / cover no-repeat;
   /* Usando a imagem e posicionamento da sua última versão */
   display: flex;
   align-items: center;
@@ -472,66 +472,114 @@ body.showNavigationSlide {
 }
 
 /* ===================================================================
-   CLIENTES EM DESTAQUE E MARQUEE
+   CARROSSEIS DE CLIENTES (HORIZONTAL)
 =================================================================== */
-#clientes-destaque {
-  padding: var(--section-padding-y) 0;
-  background: var(--white);
-}
-
-.logo-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2.5rem 2rem;
-  align-items: center;
-}
-
-.logo-grid img {
-  height: 75px;
-  max-width: 150px;
-  object-fit: contain;
-  opacity: .8;
-  transition: opacity .25s, transform .25s;
-}
-
-.logo-grid img:hover {
-  opacity: 1;
-  transform: scale(1.05);
-}
-
-.client-scrollers {
+.clientes-carousel-wrapper {
   width: 100%;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  margin-bottom: 1.5rem; /* Espaçamento abaixo do wrapper do carrossel */
 }
 
-.client-scroller {
+.clientes-carousel {
   width: 100%;
-}
-
-.client-track {
+  position: relative;
+  height: 110px; /* Altura padrão do carrossel */
   display: flex;
-  flex-wrap: nowrap;
-  width: max-content;
-  gap: 3rem;
+  align-items: center;
+  background: transparent;
 }
 
-.client-track img {
-  height: 55px;
+.carousel-track {
+  display: flex;
+  width: max-content; /* Essencial para que a trilha se expanda com o conteúdo */
+  animation: carousel-scroll 28s linear infinite; /* Animação padrão para o primeiro carrossel */
+  gap: 2.5rem; /* Espaçamento entre os logo-containers usando gap */
+}
+
+/* Animação específica para o segundo carrossel (direção reversa) */
+.carousel-2 .carousel-track {
+  animation: carousel-scroll-reverse 32s linear infinite;
+}
+
+/* Keyframes para o carrossel que rola para a ESQUERDA */
+@keyframes carousel-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Move metade da largura total da trilha */
+  }
+}
+
+/* Keyframes para o carrossel que rola para a DIREITA (CORRIGIDO) */
+@keyframes carousel-scroll-reverse {
+  0% {
+    transform: translateX(-50%); /* Começa com a segunda metade (duplicada) visível */
+  }
+  100% {
+    transform: translateX(0);    /* Termina com a primeira metade (original) visível */
+  }
+}
+
+.clientes-carousel .logo-container {
+  width: 180px;  /* Largura de cada logo */
+  height: 100px; /* Altura de cada logo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 12px;
+  padding: 0.5rem;
+  box-shadow: 0 0 4px rgba(0,0,0,0.05);
+  overflow: hidden;
+  /* margin: 0 0.5rem; */ /* Você pode usar margin ou gap na .carousel-track. Gap já está definido. */
+                           /* Se preferir margin, remova o 'gap' de .carousel-track e ajuste aqui. */
+                           /* Ex: margin-left: 1.25rem; margin-right: 1.25rem; para um total de 2.5rem entre eles */
+}
+
+.clientes-carousel .logo-container img {
   width: auto;
+  height: 100%;
+  max-width: 100%;
   object-fit: contain;
-  flex-shrink: 0;
-  opacity: 0.75;
-  transition: opacity .25s, transform .25s;
+  transition: transform 0.25s, opacity 0.25s;
+  opacity: 0.85;
 }
 
-.client-track img:hover {
+.clientes-carousel .logo-container img:hover {
   opacity: 1;
   transform: scale(1.05);
 }
+
+/* Estilo para logos que precisam de um 'boost' no tamanho, se usado dentro do carrossel */
+.logo-container img.scale-boost {
+  transform: scale(1.65); /* Ajuste o valor conforme necessário */
+  /* A transição já está no seletor img acima, mas pode ser específica aqui se desejar */
+}
+
+
+/* Ajustes responsivos para os carrosseis */
+@media (max-width: 767.98px) {
+  .clientes-carousel {
+    height: 80px; /* Altura menor em telas pequenas */
+  }
+  .clientes-carousel .logo-container {
+    width: 120px;  /* Largura menor dos logos em telas pequenas */
+    height: 60px;  /* Altura menor dos logos em telas pequenas */
+    padding: 0.25rem;
+  }
+  .carousel-track {
+    gap: 1.5rem; /* Espaçamento menor entre logos em telas pequenas */
+  }
+}
+
+/* Para desabilitar animações se o usuário preferir movimento reduzido (já presente no seu CSS original) */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track {
+    animation: none !important;
+  }
+}
+
 
 /* ===================================================================
    SERVIÇOS (Cards)
