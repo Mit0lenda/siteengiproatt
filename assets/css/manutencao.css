@@ -172,9 +172,21 @@
 /* Adicione ou ajuste no seu arquivo CSS relevante (manutencao.css ou style.css) */
 
 .service-image-carousel .carousel-item img {
-  max-height: 400px; /* Ajuste esta altura conforme desejado */
-  object-fit: cover;
+  max-height: 400px; /* Ou a altura desejada */
+  object-fit: contain; /* ALTERADO! */
   width: 100%;
+  /* Para garantir a centralização com 'object-fit: contain',
+     se a imagem não ocupar 100% da largura após o 'contain': */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 767.98px) {
+  .service-image-carousel .carousel-item img {
+    max-height: 280px; /* Ajuste para mobile */
+    /* object-fit: contain; já será herdado se não especificado aqui */
+  }
 }
 
 .service-image-carousel .carousel-control-prev-icon,

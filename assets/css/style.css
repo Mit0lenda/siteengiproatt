@@ -477,13 +477,15 @@ body.showNavigationSlide {
 .clientes-carousel-wrapper {
   width: 100%;
   overflow: hidden;
-  margin-bottom: 1.5rem; /* Espaçamento abaixo do wrapper do carrossel */
+  margin-bottom: 1.5rem;
+  /* Espaçamento abaixo do wrapper do carrossel */
 }
 
 .clientes-carousel {
   width: 100%;
   position: relative;
-  height: 110px; /* Altura padrão do carrossel */
+  height: 110px;
+  /* Altura padrão do carrossel */
   display: flex;
   align-items: center;
   background: transparent;
@@ -491,9 +493,12 @@ body.showNavigationSlide {
 
 .carousel-track {
   display: flex;
-  width: max-content; /* Essencial para que a trilha se expanda com o conteúdo */
-  animation: carousel-scroll 28s linear infinite; /* Animação padrão para o primeiro carrossel */
-  gap: 2.5rem; /* Espaçamento entre os logo-containers usando gap */
+  width: max-content;
+  /* Essencial para que a trilha se expanda com o conteúdo */
+  animation: carousel-scroll 28s linear infinite;
+  /* Animação padrão para o primeiro carrossel */
+  gap: 2.5rem;
+  /* Espaçamento entre os logo-containers usando gap */
 }
 
 /* Animação específica para o segundo carrossel (direção reversa) */
@@ -506,35 +511,43 @@ body.showNavigationSlide {
   0% {
     transform: translateX(0);
   }
+
   100% {
-    transform: translateX(-50%); /* Move metade da largura total da trilha */
+    transform: translateX(-50%);
+    /* Move metade da largura total da trilha */
   }
 }
 
 /* Keyframes para o carrossel que rola para a DIREITA (CORRIGIDO) */
 @keyframes carousel-scroll-reverse {
   0% {
-    transform: translateX(-50%); /* Começa com a segunda metade (duplicada) visível */
+    transform: translateX(-50%);
+    /* Começa com a segunda metade (duplicada) visível */
   }
+
   100% {
-    transform: translateX(0);    /* Termina com a primeira metade (original) visível */
+    transform: translateX(0);
+    /* Termina com a primeira metade (original) visível */
   }
 }
 
 .clientes-carousel .logo-container {
-  width: 180px;  /* Largura de cada logo */
-  height: 100px; /* Altura de cada logo */
+  width: 180px;
+  /* Largura de cada logo */
+  height: 100px;
+  /* Altura de cada logo */
   display: flex;
   align-items: center;
   justify-content: center;
   background: white;
   border-radius: 12px;
   padding: 0.5rem;
-  box-shadow: 0 0 4px rgba(0,0,0,0.05);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
   overflow: hidden;
-  /* margin: 0 0.5rem; */ /* Você pode usar margin ou gap na .carousel-track. Gap já está definido. */
-                           /* Se preferir margin, remova o 'gap' de .carousel-track e ajuste aqui. */
-                           /* Ex: margin-left: 1.25rem; margin-right: 1.25rem; para um total de 2.5rem entre eles */
+  /* margin: 0 0.5rem; */
+  /* Você pode usar margin ou gap na .carousel-track. Gap já está definido. */
+  /* Se preferir margin, remova o 'gap' de .carousel-track e ajuste aqui. */
+  /* Ex: margin-left: 1.25rem; margin-right: 1.25rem; para um total de 2.5rem entre eles */
 }
 
 .clientes-carousel .logo-container img {
@@ -553,7 +566,8 @@ body.showNavigationSlide {
 
 /* Estilo para logos que precisam de um 'boost' no tamanho, se usado dentro do carrossel */
 .logo-container img.scale-boost {
-  transform: scale(1.65); /* Ajuste o valor conforme necessário */
+  transform: scale(1.65);
+  /* Ajuste o valor conforme necessário */
   /* A transição já está no seletor img acima, mas pode ser específica aqui se desejar */
 }
 
@@ -561,15 +575,21 @@ body.showNavigationSlide {
 /* Ajustes responsivos para os carrosseis */
 @media (max-width: 767.98px) {
   .clientes-carousel {
-    height: 80px; /* Altura menor em telas pequenas */
+    height: 80px;
+    /* Altura menor em telas pequenas */
   }
+
   .clientes-carousel .logo-container {
-    width: 120px;  /* Largura menor dos logos em telas pequenas */
-    height: 60px;  /* Altura menor dos logos em telas pequenas */
+    width: 120px;
+    /* Largura menor dos logos em telas pequenas */
+    height: 60px;
+    /* Altura menor dos logos em telas pequenas */
     padding: 0.25rem;
   }
+
   .carousel-track {
-    gap: 1.5rem; /* Espaçamento menor entre logos em telas pequenas */
+    gap: 1.5rem;
+    /* Espaçamento menor entre logos em telas pequenas */
   }
 }
 
@@ -901,29 +921,38 @@ body.showNavigationSlide {
     /* Animação já removida do seletor principal */
   }
 }
+
 /* Abrir dropdown da navbar com hover em telas maiores (desktop) */
-@media (min-width: 992px) { /* Aplica apenas em telas 'lg' e maiores, onde a navbar não está colapsada */
+@media (min-width: 992px) {
+
+  /* Aplica apenas em telas 'lg' e maiores, onde a navbar não está colapsada */
   .navbar .nav-item.dropdown:hover .dropdown-menu {
     display: block;
-    margin-top: 0; /* Ajuste para remover qualquer espaço extra que possa surgir */
+    margin-top: 0;
+    /* Ajuste para remover qualquer espaço extra que possa surgir */
     opacity: 1;
     visibility: visible;
-    transform: translateY(0); /* Garante que esteja na posição correta */
-    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out; /* Transição suave opcional */
+    transform: translateY(0);
+    /* Garante que esteja na posição correta */
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    /* Transição suave opcional */
   }
 
   /* Opcional: Melhorar a experiência de hover para que o menu não feche imediatamente
      se o mouse sair brevemente do link principal para o submenu. */
   .navbar .nav-item.dropdown {
-    position: relative; /* Garante que o dropdown-menu seja posicionado em relação a este item */
+    position: relative;
+    /* Garante que o dropdown-menu seja posicionado em relação a este item */
   }
 
   /* Estilo para quando o dropdown está visível via hover (para a transição) */
   .navbar .nav-item.dropdown .dropdown-menu {
     opacity: 0;
     visibility: hidden;
-    display: block; /* Necessário para calcular a posição antes da transição */
-    transform: translateY(10px); /* Efeito sutil de surgir de baixo */
+    display: block;
+    /* Necessário para calcular a posição antes da transição */
+    transform: translateY(10px);
+    /* Efeito sutil de surgir de baixo */
     transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out, visibility 0s linear 0.2s;
     /* O 'visibility 0s linear 0.2s' esconde após a transição de opacidade terminar */
   }
@@ -935,17 +964,22 @@ body.showNavigationSlide {
 
 /* Ajustes adicionais para o dropdown (opcional, mas melhora a aparência) */
 .navbar .dropdown-menu {
-  border-radius: var(--border-radius, 0.375rem); /* Usar o raio de borda do seu tema */
+  border-radius: var(--border-radius, 0.375rem);
+  /* Usar o raio de borda do seu tema */
   border: 1px solid var(--gray-border, #dee2e6);
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
-  /* min-width: 220px; */ /* Defina uma largura mínima se necessário */
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+  /* min-width: 220px; */
+  /* Defina uma largura mínima se necessário */
 }
 
 .navbar .dropdown-menu .dropdown-item {
-  font-size: 0.85rem; /* Ajustar tamanho da fonte dos itens do dropdown */
+  font-size: 0.85rem;
+  /* Ajustar tamanho da fonte dos itens do dropdown */
   padding: 0.5rem 1rem;
-  text-transform: none; /* Remove o uppercase se não desejar nos itens */
-  font-weight: 500; /* Peso da fonte normal para os itens */
+  text-transform: none;
+  /* Remove o uppercase se não desejar nos itens */
+  font-weight: 500;
+  /* Peso da fonte normal para os itens */
   color: var(--bs-dark);
 }
 
@@ -958,70 +992,82 @@ body.showNavigationSlide {
 .navbar .dropdown-menu .dropdown-divider {
   border-top: 1px solid var(--gray-border, #dee2e6);
 }
+
 /* assets/css/style.css */
 
 /* ... outros estilos ... */
 
 .cta-section .btn-cta-custom {
-  background-color: var(--white); /* Fundo branco */
-  color: var(--primary);          /* Texto na cor primária */
-  border-color: var(--white);     /* Borda opcional, pode ser --primary também */
+  background-color: var(--white);
+  /* Fundo branco */
+  color: var(--primary);
+  /* Texto na cor primária */
+  border-color: var(--white);
+  /* Borda opcional, pode ser --primary também */
   font-weight: 600;
 }
 
 .cta-section .btn-cta-custom:hover,
 .cta-section .btn-cta-custom:focus {
-  background-color: var(--gray-bg); /* Ou uma cor de hover mais escura se preferir */
+  background-color: var(--gray-bg);
+  /* Ou uma cor de hover mais escura se preferir */
   color: var(--primary-dark);
   border-color: var(--gray-bg);
 }
+
 /* ===================================================================
    CARROSSEL DE IMAGENS E VÍDEO (Revisão para Corrigir Bug de Navegação)
 =================================================================== */
 .service-image-carousel .carousel-inner {
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    /* Considerar um background aqui apenas se os itens não cobrirem 100% e vazar */
-    /* background-color: #f8f9fa; */
+  border-radius: var(--border-radius);
+  overflow: hidden;
 }
 
 .service-image-carousel .carousel-item {
-    /* REMOVEMOS height, display:flex, align-items, justify-content e overflow:hidden daqui
-       para deixar o Bootstrap controlar o layout básico do item.
-       A altura será determinada pelo conteúdo de cada slide. */
-    text-align: center; /* Ajuda a centralizar o vídeo se ele for display: inline-block */
+  text-align: center;
+  /* Ajuda a centralizar, especialmente se a imagem não for display:block */
 }
 
 /* Fundo para o slide do vídeo */
 .service-image-carousel .carousel-item.video-slide {
-    background-color: #000000; /* Fundo preto para o slide do vídeo */
-    /* Se a altura do carrossel variar muito, você pode dar uma min-height aqui
-       ou ao .service-image-carousel como um todo, mas comece sem. */
-    /* min-height: 400px; */ /* Exemplo, ajuste ou remova */
+  background-color: #000000;
+  /* Fundo preto para o slide do vídeo */
 }
 
 /* Fundo para os slides de imagem */
 .service-image-carousel .carousel-item.image-slide {
-    background-color: #ffffff; /* Fundo branco para os slides de imagem */
+  background-color: #000000;
+  /* Fundo branco para os slides de imagem */
 }
 
 .service-image-carousel .carousel-item img {
-    /* Para fazer a imagem ocupar 100% da largura e sua altura definir a do slide: */
-    /* Certifique-se que a tag img no HTML tem class="d-block w-100" */
-
-    /* Se você quiser que TODAS as imagens tenham uma ALTURA MÁXIMA e usem object-fit: */
-    max-height: 450px; /* Defina uma altura MÁXIMA para as imagens, ajuste! */
-    width: auto;       /* Para manter a proporção com max-height */
-    margin: 0 auto;    /* Para centralizar se a largura for menor que a do carrossel */
-    object-fit: contain; /* Para ver a imagem inteira, pode ter barras */
-    /* Se quiser que preencha e corte, use object-fit: cover e defina width/height fixos
-       ou use a imagem para definir a altura via d-block w-100 no HTML e não defina altura aqui. */
+  display: block;
+  /* Garante que a imagem seja tratada como um bloco. */
+  max-width: 100%;
+  /* A imagem não será mais larga que o seu contêiner (.carousel-item). */
+  width: auto;
+  /* A largura se ajustará para manter a proporção, respeitando max-width. */
+  max-height: 450px;
+  /* Limita a altura da imagem. Você pode ajustar este valor conforme necessário. */
+  height: auto;
+  /* A altura se ajustará para manter a proporção, respeitando max-height. */
+  object-fit: contain;
+  /* Faz com que toda a imagem caiba dentro das dimensões (max-width/max-height),
+                               mantendo sua proporção. Isso pode adicionar espaços vazios nas laterais
+                               ou acima/abaixo se a proporção da imagem for diferente da área disponível. */
+  margin-left: auto;
+  /* Centraliza a imagem horizontalmente. */
+  margin-right: auto;
+  /* Centraliza a imagem horizontalmente. */
+  /* Se o .carousel-item tiver uma altura maior que a imagem,
+       a imagem ficará alinhada ao topo por padrão com display: block.
+       Para centralização vertical, seria necessário usar flexbox no .carousel-item. */
 }
 
 .service-image-carousel .carousel-item video {
-    display: inline-block; /* Para respeitar o text-align: center do pai */
-    vertical-align: middle; /* Alinha melhor se o slide for mais alto que o vídeo */
-    max-width: 300px;  /* Seu estilo inline para a caixa do vídeo */
-    max-height: 450px; /* Altura máxima para o vídeo, ajuste se necessário */
-    object-fit: contain; /* Para ver o vídeo inteiro */
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 300px;
+  max-height: 450px;
+  object-fit: contain;
 }
