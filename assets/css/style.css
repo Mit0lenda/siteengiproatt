@@ -618,7 +618,7 @@ body.showNavigationSlide {
 
 .service-card img,
 .service-card .card-img-top {
-  height: 180px;
+  height: 400px;
   object-fit: cover;
   border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
