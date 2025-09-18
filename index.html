@@ -258,7 +258,7 @@
     <h2 class="section-title text-center mb-5">Entre em contato</h2>
     <div class="row gy-5 gx-lg-5 align-items-start">
       <div class="col-lg-7">
-        <form class="row g-3 needs-validation" action="enviar.php" method="POST" novalidate>
+        <form class="row g-3 needs-validation" id="contactForm" novalidate>
   <div class="col-md-6">
     <label for="contactName" class="form-label visually-hidden">Nome</label>
     <input type="text" id="contactName" name="contactName" class="form-control" placeholder="Seu Nome*" required>
@@ -313,7 +313,7 @@
   </div>
 
   <div class="col-12 text-center">
-    <button class="btn btn-primary px-5 py-2 fw-bold text-uppercase" type="submit">Enviar</button>
+  <button class="btn btn-primary px-5 py-2 fw-bold text-uppercase" type="submit" id="btnEnviar">Enviar</button>
   </div>
 </form>
 
@@ -475,5 +475,70 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
 <script src="/assets/js/main.js" defer></script>
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init('o_iDTaGO_ErVeU_LH'); // Chave pública
+  })();
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    const btnEnviar = document.getElementById('btnEnviar');
+
+    // Cria o elemento de notificação
+    const notify = document.createElement('div');
+    notify.id = 'notify-success';
+    notify.style.display = 'none';
+    notify.style.position = 'fixed';
+    notify.style.top = '30px';
+    notify.style.left = '50%';
+    notify.style.transform = 'translateX(-50%)';
+    notify.style.zIndex = '9999';
+    notify.style.background = 'linear-gradient(90deg, #0d6efd 0%, #198754 100%)';
+    notify.style.color = '#fff';
+    notify.style.padding = '1rem 2rem';
+    notify.style.borderRadius = '1rem';
+    notify.style.boxShadow = '0 2px 16px rgba(0,0,0,0.15)';
+    notify.style.fontWeight = 'bold';
+    notify.style.fontSize = '1.1rem';
+    notify.style.textAlign = 'center';
+    notify.innerHTML = '<i class="fa-solid fa-paper-plane me-2"></i>Sua mensagem foi enviada com sucesso!';
+    document.body.appendChild(notify);
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      btnEnviar.disabled = true;
+      btnEnviar.textContent = 'Enviando...';
+
+      emailjs.sendForm('service_t1e5vr2', 'template_652yxpb', form)
+        .then(function() {
+          btnEnviar.textContent = 'Enviado!';
+          btnEnviar.classList.remove('btn-primary');
+          btnEnviar.classList.add('btn-success');
+          form.reset();
+          // Mostra notificação
+          notify.style.display = 'block';
+          setTimeout(function() {
+            notify.style.display = 'none';
+            btnEnviar.textContent = 'Enviar';
+            btnEnviar.classList.remove('btn-success');
+            btnEnviar.classList.add('btn-primary');
+            btnEnviar.disabled = false;
+          }, 3000);
+        }, function(error) {
+          btnEnviar.textContent = 'Erro ao enviar';
+          btnEnviar.classList.remove('btn-primary');
+          btnEnviar.classList.add('btn-danger');
+          setTimeout(function() {
+            btnEnviar.textContent = 'Enviar';
+            btnEnviar.classList.remove('btn-danger');
+            btnEnviar.classList.add('btn-primary');
+            btnEnviar.disabled = false;
+          }, 4000);
+        });
+    });
+  });
+</script>
 </body>
 </html>
