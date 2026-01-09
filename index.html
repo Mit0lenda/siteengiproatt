@@ -21,6 +21,46 @@
   <link rel="stylesheet" href="/assets/css/style.css">
 
   <link rel="preload" as="image" href="/assets/img/banners/banner.jpeg">
+   <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16573341881"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-16573341881');
+  </script>
+
+  <!-- Event snippet for VISITOU SITE conversion page -->
+  <script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-16573341881/bTzPCJ7DqL8ZELnB5N49',
+        'event_callback': callback
+    });
+    return false;
+  }
+  </script>
+
+  <!-- Google tag (gtag.js) event - delayed navigation helper -->
+  <script>
+    function gtagSendEvent(url) {
+      var callback = function () {
+        if (typeof url === 'string') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'ads_conversion_Fale_conosco_1', {
+        'event_callback': callback,
+        'event_timeout': 2000
+      });
+      return false;
+    }
+  </script>
 </head>
 <body>
 
@@ -53,7 +93,16 @@
         <a class="nav-link" href="manutencao.html">Serviços</a>
         <a class="nav-link" href="produto-home-lift.html">Produtos</a>
         <a class="nav-link" href="clientes.html">Clientes</a>
-        <a class="nav-link" href="/#contato">Contato</a>
+        <li class="nav-item">
+  <a
+    class="nav-link"
+    href="/#contato"
+    onclick="return gtagSendEvent('/#contato');"
+  >
+    Contato
+  </a>
+</li>
+
       </div>
     </nav>
   </div>
@@ -64,10 +113,18 @@
   <div class="container position-relative z-1 py-5 text-center">
     <h1 class="hero-title fw-bold mb-3">Soluções em <br class="d-none d-md-block">Elevadores</h1>
 
-    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
-      <a href="/#servicos" class="btn btn-outline-light btn-lg">Nossos serviços</a>
-      <a href="/#contato" class="btn btn-primary btn-lg">Fale conosco</a>
-    </div>
+  <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+    <a href="/#servicos" class="btn btn-outline-light btn-lg">
+      Nossos serviços
+    </a>
+    <a
+      href="/#contato"
+      class="btn btn-primary btn-lg"
+      onclick="return gtagSendEvent('/#contato');"
+    >
+      Fale conosco
+    </a>
+  </div>
 
     <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 gap-sm-5 mt-4 pt-4">
       <div>
